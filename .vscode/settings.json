@@ -7,6 +7,9 @@
         "string": "cpp",
         "utility": "cpp",
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string_view": "cpp",
+        "__tuple": "c",
+        "stdio.h": "c"
     }
 }
