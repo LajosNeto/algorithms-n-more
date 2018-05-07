@@ -17,18 +17,21 @@ DinArray *new_dinarray(){
     return dinArray;
 }
 
+void reallocate_data(DinArray *dinArray, int *newData, int new_capacity){
+    for(int i=0; i<dinArray->totalSize; i++){
+        *(newData+i) = *(dinArray->data+i);
+    }
+    free(dinArray->data);
+    dinArray->data = newData;
+    dinArray->totalCapacity = new_capacity;
+}
+
 void dinarray_check_resize(DinArray *dinArray, int newSize){
     if(newSize >= dinArray->totalCapacity){
         printf("\nARRAY GROOOOOW\n");
         int new_capacity = dinArray->totalCapacity * GROW_FACTOR;
-        printf("\nPOINT 1\n");
         int *newDinArrayData = (int*)malloc(sizeof(int)*new_capacity);
-        printf("\nPOINT 2\n");
-        newDinArrayData = realloc(dinArray->data, new_capacity);
-        printf("\nPOINT 3\n");
-        free(dinArray->data);
-        dinArray->data = newDinArrayData;
-        dinArray->totalCapacity = new_capacity;
+        reallocate_data(dinArray, newDinArrayData, new_capacity);
     }
     else if(newSize < dinArray->totalSize){
         if(dinArray->totalSize < dinArray->totalCapacity/GROW_FACTOR){
@@ -40,17 +43,10 @@ void dinarray_check_resize(DinArray *dinArray, int newSize){
             
             if(new_capacity != current_capacity){
                 int *newDinArrayData = (int*)malloc(sizeof(int)*new_capacity);
-                newDinArrayData = realloc(dinArray->data, new_capacity);
-                free(dinArray->data);
-                dinArray->data = newDinArrayData;
-                dinArray->totalCapacity = new_capacity;
+                reallocate_data(dinArray, newDinArrayData, new_capacity);
             }
         }
     }
-}
-
-void reallocate_data(DinArray *dinArray){
-    
 }
 
 int dinarray_size(DinArray *dinArray){
