@@ -32,9 +32,14 @@ int dinarray_capacity(DinArray *dinArray);
 int dinarray_is_empty(DinArray *dinArray);
 // Push new value in last position
 void dinarray_push(DinArray *dinArray, int value);
+// Return value at given index
+int dinarray_at(DinArray *dinArray, int index);
 // Print all items
 void dinarray_print_data(DinArray *dinArray);
-
+// Insert a new value at given position. Shifts items to the right
+void dinarray_insert(DinArray *dinArray, int index, int value);
+// Insert a new value at the first position
+void dinarray_prepend(DinArray *dinArray, int value);
 
 
 #endif  // PROJECT_ARRAY_H

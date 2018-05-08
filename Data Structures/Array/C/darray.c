@@ -69,5 +69,28 @@ void dinarray_push(DinArray *dinArray, int value){
 }
 
 void dinarray_print_data(DinArray *dinArray){
-    for(int i=0; i<dinArray->totalSize; i++) printf("%d",*(dinArray->data+i));
+    for(int i=0; i<dinArray->totalSize; i++) printf("%d ->",*(dinArray->data+i));
+}
+
+int dinarray_at(DinArray *dinArray, int index){
+    return *(dinArray->data+index);
+}
+
+void dinarray_insert(DinArray *dinArray, int index, int value){
+    if(index>dinArray->totalSize||index<=0){
+        printf("Invalid operation. Negative index or trying to insert on invalid position");
+        return;
+    }
+    int i=0;
+    dinarray_check_resize(dinArray, dinArray->totalSize+1);
+    for(int j=dinArray->totalSize; j>=index; j--){
+        i=j-1;
+        *(dinArray->data+j) = *(dinArray->data+i);
+    }
+    *(dinArray->data+(index-1)) = value;
+    ++(dinArray->totalSize);
+}
+
+void dinarray_prepend(DinArray *dinArray, int value){
+    dinarray_insert(dinArray, 1, value);
 }

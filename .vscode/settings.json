@@ -10,6 +10,7 @@
         "iostream": "cpp",
         "string_view": "cpp",
         "__tuple": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "__locale": "cpp"
     }
 }
