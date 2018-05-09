@@ -73,6 +73,7 @@ void dinarray_print_data(DinArray *dinArray){
 }
 
 int dinarray_at(DinArray *dinArray, int index){
+    if(index>=dinArray->totalSize || index<0) return 0;
     return *(dinArray->data+index);
 }
 
@@ -93,4 +94,15 @@ void dinarray_insert(DinArray *dinArray, int index, int value){
 
 void dinarray_prepend(DinArray *dinArray, int value){
     dinarray_insert(dinArray, 1, value);
+}
+
+void dinarray_pop(DinArray *dinArray){
+    if(dinArray->totalSize == 0) exit(EXIT_FAILURE);
+    dinarray_check_resize(dinArray, dinArray->totalSize-1);
+    dinArray->totalSize--;
+}
+
+void dinarray_delete(DinArray *dinArray, int index){
+    dinarray_check_resize(dinA);
+    
 }

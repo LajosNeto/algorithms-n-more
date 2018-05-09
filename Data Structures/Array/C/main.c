@@ -28,4 +28,12 @@ int main(){
     printf("\n");
     dinarray_print_data(dinArray);
     printf("\n");
+    for(int i=1; i<=6; i++){
+        dinarray_pop(dinArray);
+        printf("\n");
+        printf("Array actual capacity = %d",dinArray->totalCapacity);
+        printf("\n");
+        dinarray_print_data(dinArray);
+        printf("\n");
+    }
 }

@@ -11,6 +11,7 @@
         "string_view": "cpp",
         "__tuple": "c",
         "stdio.h": "c",
-        "__locale": "cpp"
+        "__locale": "cpp",
+        "__bit_reference": "c"
     }
 }

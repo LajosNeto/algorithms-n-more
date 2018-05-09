@@ -40,6 +40,9 @@ void dinarray_print_data(DinArray *dinArray);
 void dinarray_insert(DinArray *dinArray, int index, int value);
 // Insert a new value at the first position
 void dinarray_prepend(DinArray *dinArray, int value);
-
+// Remove the last item on the DinArray
+void dinarray_pop(DinArray *dinArray);
+// Delete item at a given position. Shifts items to the left
+void dinarray_delete(DinArray *dinArray, int index);
 
 #endif  // PROJECT_ARRAY_H
