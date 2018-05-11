@@ -78,15 +78,14 @@ int dinarray_at(DinArray *dinArray, int index){
 }
 
 void dinarray_insert(DinArray *dinArray, int index, int value){
-    if(index>dinArray->totalSize||index<=0){
+    if(index>dinArray->totalSize+1||index<=0){
         printf("Invalid operation. Negative index or trying to insert on invalid position");
         return;
     }
-    int i=0;
+
     dinarray_check_resize(dinArray, dinArray->totalSize+1);
     for(int j=dinArray->totalSize; j>=index; j--){
-        i=j-1;
-        *(dinArray->data+j) = *(dinArray->data+i);
+        *(dinArray->data+j) = *(dinArray->data+(j-1));
     }
     *(dinArray->data+(index-1)) = value;
     ++(dinArray->totalSize);
@@ -103,6 +102,15 @@ void dinarray_pop(DinArray *dinArray){
 }
 
 void dinarray_delete(DinArray *dinArray, int index){
-    dinarray_check_resize(dinA);
+    if(index>dinArray->totalSize||index<=0){
+        printf("Invalid operation. Negative index or trying to insert on invalid position");
+        return;
+    }
+
+    dinarray_check_resize(dinArray, dinArray->totalSize-1);
     
+    for(int i=index-1; i<=dinArray->totalSize-2; i++){
+        *(dinArray->data+i) = *(dinArray->data+(i+1));
+    }
+    --(dinArray->totalSize);
 }
