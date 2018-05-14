@@ -46,5 +46,8 @@ void dinarray_pop(DinArray *dinArray);
 void dinarray_delete(DinArray *dinArray, int index);
 // Remove given value from DinArray - even in multiple places
 void dinarray_remove(DinArray *dinArray, int value);
+// Look for a given value within the DinArray. Returns the first position it appers
+//or -1 if value was not found
+int dinarray_find(DinArray *dinArray, int value);
 
 #endif  // PROJECT_ARRAY_H

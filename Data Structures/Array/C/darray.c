@@ -116,7 +116,16 @@ void dinarray_delete(DinArray *dinArray, int index){
 }
 
 void dinarray_remove(DinArray *dinArray, int value){
-    for (int i=0; i< dinArray->totalSize; i++){
+    int i=0;
+    do{
         if(*(dinArray->data+i) == value) dinarray_delete(dinArray, i+1);
+        else ++i;
+    } while(i<dinArray->totalSize);
+}
+
+int dinarray_find(DinArray *dinArray, int value){
+    for (int i=0; i<dinArray->totalSize; i++){
+        if(*(dinArray->data+i) == value) return i;
     }
+    return -1;
 }

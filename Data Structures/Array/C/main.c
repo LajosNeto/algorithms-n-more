@@ -25,20 +25,22 @@ int main(){
     printf("\n");
     dinarray_push(dinArray,666);
     printf("\n");
-    dinarray_push(dinArray,666);
+    dinarray_push(dinArray,100);
     printf("\n");
     dinarray_push(dinArray,666);
     printf("\n");
-    dinarray_push(dinArray,666);
-    dinarray_print_data(dinArray);
-    printf("\n");
-    dinarray_prepend(dinArray, 50);
+    dinarray_push(dinArray,100);
     printf("\n");
     dinarray_print_data(dinArray);
     printf("\n");
-    dinarray_insert(dinArray, 5, 10);
+    dinarray_remove(dinArray, 666);
+    printf("\n");
     dinarray_print_data(dinArray);
     printf("\n");
+    int find = dinarray_find(dinArray, 20);
+    printf("%d", find);
+    printf("\n");
+
     //dinarray_remove(dinArray, 666);
     //printf("\n");
     //dinarray_print_data(dinArray);
