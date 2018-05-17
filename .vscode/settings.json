@@ -12,6 +12,14 @@
         "__tuple": "c",
         "stdio.h": "c",
         "__locale": "cpp",
-        "__bit_reference": "c"
+        "__bit_reference": "c",
+        "__config": "cpp",
+        "__nullptr": "cpp",
+        "cstddef": "cpp",
+        "exception": "cpp",
+        "new": "cpp",
+        "stdexcept": "cpp",
+        "type_traits": "cpp",
+        "typeinfo": "cpp"
     }
 }
