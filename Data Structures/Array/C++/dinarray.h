@@ -22,13 +22,24 @@ class DinArray {
     DinArray();
     // Return DinArray current total size
     int GetSize();
-
-
+    // Return DinArray total capacity
+    int GetCapacity();
+    // Check if DinArray is empty
+    bool IsEmpty();
+    // Return value stored at a given position
+    int GetValueAtPosition(int index);
+    // Insert new value in the last position
+    void Push(int value);
+    // Remove value from the last position
+    void Pop();
+    
     private:
-    int total_capacity {minCapacity};
-    int total_size {0};
+    int total_capacity ;
+    int total_size;
     std::unique_ptr<int[]> data;
-
+    void CheckResize(int new_size);
+    void ReallocateData(int new_size);
+    
 
 };
 
