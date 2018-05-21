@@ -40,6 +40,8 @@ class DinArray {
     void Prepend(int value);
     // Deletes a value from a given index
     void Delete(int index);
+    // Removes/Deletes given value in all positions found
+    void Remove(int value);
     
     private:
     int total_capacity ;

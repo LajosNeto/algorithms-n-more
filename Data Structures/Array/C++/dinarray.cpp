@@ -93,13 +93,27 @@ namespace darray{
 
     void DinArray::Delete(int index){
         if(total_size == 0 || index >= total_size || index < 0){
-            std::cout << "Error: invalid operation. Please check current size and/or desired index.\n"
+            std::cout << "Error: invalid operation. Please check current size and/or desired index.\n";
+            exit(EXIT_FAILURE);
         }
         CheckResize(total_size-1);
         for(int i=index; i<total_size; i++){
             data[i] = data[i+1];
         }
         --total_size;
+    }
+
+    void DinArray::Remove(int value){
+        int i = 0;
+        do
+        {
+            if(data[i] == value){
+                Delete(i);
+            }
+            else{
+                ++i;
+            }
+        } while (i<total_size);       
     }
 
 }
