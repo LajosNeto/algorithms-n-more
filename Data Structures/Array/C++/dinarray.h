@@ -26,12 +26,20 @@ class DinArray {
     int GetCapacity();
     // Check if DinArray is empty
     bool IsEmpty();
+    // Print all data from DinArray
+    void PrintData();
     // Return value stored at a given position
     int GetValueAtPosition(int index);
     // Insert new value in the last position
     void Push(int value);
     // Remove value from the last position
     void Pop();
+    // Insert a new value ar a given position
+    void Insert(int index, int value);
+    // Insert new value in the first position(index 0)
+    void Prepend(int value);
+    // Deletes a value from a given index
+    void Delete(int index);
     
     private:
     int total_capacity ;
