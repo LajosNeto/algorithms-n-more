@@ -42,6 +42,8 @@ class DinArray {
     void Delete(int index);
     // Removes/Deletes given value in all positions found
     void Remove(int value);
+    // Looks for a given value
+    int Find(int value);
     
     private:
     int total_capacity ;

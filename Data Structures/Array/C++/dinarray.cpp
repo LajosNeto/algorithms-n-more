@@ -116,4 +116,15 @@ namespace darray{
         } while (i<total_size);       
     }
 
+    int DinArray::Find(int value){
+        for (int i=0; i<total_size; i++){
+            if(data[i] == value){
+                return i;
+            }
+            else{
+                return -1;
+            }
+        }
+    }
+
 }
