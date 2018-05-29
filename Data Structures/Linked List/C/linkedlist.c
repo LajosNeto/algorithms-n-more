@@ -52,3 +52,11 @@ void linkedlist_print(LinkedList *linkedList){
         temp = temp->next;
     }
 }
+
+int linkedlist_get_front(LinkedList *linkedList){
+    return linkedList->head->value;
+}
+
+int linkedlist_get_back(LinkedList *linkedList){
+    return linkedList->tail->value;
+}

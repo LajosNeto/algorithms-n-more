@@ -32,6 +32,8 @@ void linkedlist_push_end(LinkedList *linkedList, int value);
 // Print linked list values
 void linkedlist_print(LinkedList *linkedList);
 // Returns front item
-int linkedlist_get_front(LinkedList *LinkedList);
+int linkedlist_get_front(LinkedList *linkedList);
+// Returns back item
+int linkedlist_get_back(LinkedList *linkedList);
 
 #endif  // PROJECT_LINKEDLIST_H

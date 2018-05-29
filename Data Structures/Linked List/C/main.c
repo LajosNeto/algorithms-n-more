@@ -19,5 +19,10 @@ int main(){
     linkedlist_print(linkedList);
     printf("\n");
     printf("%d", linkedlist_size(linkedList));
+    printf("\n");
+    printf("%d", linkedlist_get_front(linkedList));
+    printf("\n");
+    printf("%d", linkedlist_get_back(linkedList));
+    printf("\n");
     return 0;
 }
