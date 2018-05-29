@@ -26,7 +26,7 @@ int linkedlist_size(LinkedList *linkedList){
     return linkedList->size;
 }
 
-void linkedlist_add_begin(LinkedList *linkedList, int value){
+void linkedlist_push_begin(LinkedList *linkedList, int value){
     LinkedListNode *new_node = malloc(sizeof(LinkedListNode));
     new_node->next = NULL;
     new_node->value = value; 
@@ -39,7 +39,7 @@ void linkedlist_add_begin(LinkedList *linkedList, int value){
         new_node->next = linkedList->head;
         linkedList->head = new_node;
     }
-    
+
     ++linkedList->size;
 }
 
@@ -48,7 +48,6 @@ void linkedlist_push_end(LinkedList *linkedList, int value){
     new_node->next = NULL;
     new_node->value = value;
 
-    // Checks if linked list is empty
     if(linkedlist_is_empty(linkedList)){
         linkedList->head = new_node;
         linkedList->tail = new_node;
@@ -59,6 +58,18 @@ void linkedlist_push_end(LinkedList *linkedList, int value){
     }
 
     ++linkedList->size;
+}
+
+void linkedlist_pop_begin(LinkedList *linkedList){
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - Empty linked list\n");
+        exit(EXIT_FAILURE);
+    }
+    LinkedListNode *temp = linkedList->head;
+    linkedList->head = linkedList->head->next;
+    if(linkedList->tail == temp) linkedList->tail = linkedList->head;
+
+    free(temp);
 }
 
 void linkedlist_print(LinkedList *linkedList){

@@ -24,11 +24,15 @@ int main(){
     printf("\n");
     printf("%d", linkedlist_get_back(linkedList));
     printf("\n");
-    linkedlist_add_begin(linkedList, 55);
+    linkedlist_push_begin(linkedList, 55);
     linkedlist_print(linkedList);
     printf("\n");
-    linkedlist_add_begin(linkedList, 33);
+    linkedlist_push_begin(linkedList, 33);
     linkedlist_print(linkedList);
     printf("\n");
+    linkedlist_pop_begin(linkedList);
+    linkedlist_print(linkedList);
+    printf("\n");   
+
     return 0;
 }
