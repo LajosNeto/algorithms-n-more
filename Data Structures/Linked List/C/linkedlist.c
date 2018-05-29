@@ -26,17 +26,33 @@ int linkedlist_size(LinkedList *linkedList){
     return linkedList->size;
 }
 
+void linkedlist_add_begin(LinkedList *linkedList, int value){
+    LinkedListNode *new_node = malloc(sizeof(LinkedListNode));
+    new_node->next = NULL;
+    new_node->value = value; 
+
+    if(linkedlist_is_empty(linkedList)){
+        linkedList->head = new_node;
+        linkedList->tail = new_node;
+    }
+    else{
+        new_node->next = linkedList->head;
+        linkedList->head = new_node;
+    }
+    
+    ++linkedList->size;
+}
+
 void linkedlist_push_end(LinkedList *linkedList, int value){
     LinkedListNode *new_node = malloc(sizeof(LinkedListNode));
     new_node->next = NULL;
     new_node->value = value;
 
     // Checks if linked list is empty
-    if(linkedList->head == NULL && linkedList->tail == NULL){
+    if(linkedlist_is_empty(linkedList)){
         linkedList->head = new_node;
         linkedList->tail = new_node;
     }
-
     else{
         linkedList->tail->next = new_node;
         linkedList->tail = new_node;

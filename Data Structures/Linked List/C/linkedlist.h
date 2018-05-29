@@ -27,6 +27,8 @@ LinkedList *new_linked_list();
 int linkedlist_is_empty(LinkedList *linkedList);
 // Return linked list size
 int linkedlist_size(LinkedList *linkedList);
+// Add a new node at the beginning of the linked list
+void linkedlist_add_begin(LinkedList *linkedList, int value);
 // Add a new node at the end of the linked list
 void linkedlist_push_end(LinkedList *linkedList, int value);
 // Print linked list values
