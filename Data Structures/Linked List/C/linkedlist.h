@@ -8,16 +8,30 @@
 #ifndef PROJECT_LINKEDLIST_H
 #define PROJECT_LINKEDLIST_H
 
-#endif  // PROJECT_LINKEDLIST_H
 
-typedef struct ListNode{
+typedef struct LinkedListNode{
     int value;
-    struct ListNode *next;
-};
+    struct LinkedListNode *next;
+} LinkedListNode;
 
 typedef struct LinkedList{
-    struct ListNode *head;
-    struct ListNode *tail;
-};
+    struct LinkedListNode *head;
+    struct LinkedListNode *tail;
+    int size;
+} LinkedList;
 
+
+// Creates a new linked list
 LinkedList *new_linked_list();
+// Checks if the linked list is empty
+int linkedlist_is_empty(LinkedList *linkedList);
+// Return linked list size
+int linkedlist_size(LinkedList *linkedList);
+// Add a new node at the end of the linked list
+void linkedlist_push_end(LinkedList *linkedList, int value);
+// Print linked list values
+void linkedlist_print(LinkedList *linkedList);
+// Returns front item
+int linkedlist_get_front(LinkedList *LinkedList);
+
+#endif  // PROJECT_LINKEDLIST_H
