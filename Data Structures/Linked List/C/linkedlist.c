@@ -60,6 +60,38 @@ void linkedlist_push_end(LinkedList *linkedList, int value){
     ++linkedList->size;
 }
 
+void linkedlist_insert_at(LinkedList *linkedList, int index, int value){
+    LinkedListNode *new_node = malloc(sizeof(LinkedListNode));
+    new_node->next = NULL;
+    new_node->value = value;
+
+    if(index < 0 || index >= linkedList->size){
+        printf("Error - index out of bounds");
+        exit(EXIT_FAILURE);
+    }
+
+    if(linkedlist_is_empty(linkedList)){
+        linkedList->head = new_node;
+        linkedList->tail = new_node;
+        ++linkedList->size;
+    }
+    else if(index == 0){
+        linkedlist_push_begin(linkedList, value);
+    }
+    else{
+        LinkedListNode *prev_index = linkedList->head;
+        LinkedListNode *actual_index = linkedList->head;
+        for(int i=0; i<index; i++){
+            prev_index = actual_index;
+            actual_index = actual_index->next;
+        }
+        new_node->next = actual_index;
+        prev_index->next = new_node;
+        ++linkedList->size;
+    }
+
+}
+
 void linkedlist_pop_begin(LinkedList *linkedList){
     if(linkedlist_is_empty(linkedList)){
         printf("Error - Empty linked list\n");
@@ -70,6 +102,7 @@ void linkedlist_pop_begin(LinkedList *linkedList){
     if(linkedList->tail == temp) linkedList->tail = linkedList->head;
 
     free(temp);
+    --linkedList->size;
 }
 
 void linkedlist_pop_end(LinkedList *linkedList){
@@ -95,6 +128,8 @@ void linkedlist_pop_end(LinkedList *linkedList){
         temp->next = NULL;
         free(temp_next);
     }
+
+    --linkedList->size;
 }
 
 void linkedlist_print(LinkedList *linkedList){

@@ -31,6 +31,8 @@ int linkedlist_size(LinkedList *linkedList);
 void linkedlist_push_begin(LinkedList *linkedList, int value);
 // Add a new node at the end of the linked list
 void linkedlist_push_end(LinkedList *linkedList, int value);
+// Insert a new node at a given index
+void linkedlist_insert_at(LinkedList *linkedList, int index, int value);
 // Remove the first node/value
 void linkedlist_pop_begin(LinkedList *linkedList);
 // Remove the last node/value

@@ -48,6 +48,21 @@ int main(){
     linkedlist_push_begin(linkedList, 55);
     linkedlist_print(linkedList);
     printf("\n");
+    linkedlist_insert_at(linkedList, 0, 22);
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_insert_at(linkedList, 0, 44);
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_insert_at(linkedList, 1, 33);
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_insert_at(linkedList, 3, 99);
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_insert_at(linkedList, 4, 77);
+    linkedlist_print(linkedList);
+    printf("\n");
 
     return 0;
 }
