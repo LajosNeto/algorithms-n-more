@@ -33,6 +33,8 @@ void linkedlist_push_begin(LinkedList *linkedList, int value);
 void linkedlist_push_end(LinkedList *linkedList, int value);
 // Remove the first node/value
 void linkedlist_pop_begin(LinkedList *linkedList);
+// Remove the last node/value
+void linkedlist_pop_end(LinkedList *linkedList);
 // Print linked list values
 void linkedlist_print(LinkedList *linkedList);
 // Returns front item

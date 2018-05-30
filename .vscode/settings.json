@@ -21,7 +21,8 @@
         "stdexcept": "cpp",
         "type_traits": "cpp",
         "typeinfo": "cpp",
-        "linkedlist.h": "c"
+        "linkedlist.h": "c",
+        "memory": "c"
     },
     "python.pythonPath": "/Users/lajosneto/.pyenv/versions/fullDLenv/bin/python"
 }

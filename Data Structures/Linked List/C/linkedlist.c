@@ -72,6 +72,31 @@ void linkedlist_pop_begin(LinkedList *linkedList){
     free(temp);
 }
 
+void linkedlist_pop_end(LinkedList *linkedList){
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - Empty linked list\n");
+        exit(EXIT_FAILURE);
+    }
+
+    if(linkedList->tail == linkedList->head){
+        free(linkedList->tail);
+        linkedList->head = NULL;
+        linkedList->tail = NULL;
+    }
+    else{
+        LinkedListNode *temp = linkedList->head;
+        LinkedListNode *temp_next = linkedList->head;
+        while(temp_next != linkedList->tail){
+            temp = temp_next;
+            temp_next = temp_next->next;
+        }
+
+        linkedList->tail = temp;
+        temp->next = NULL;
+        free(temp_next);
+    }
+}
+
 void linkedlist_print(LinkedList *linkedList){
     LinkedListNode *temp = linkedList->head;
     while(temp != NULL){

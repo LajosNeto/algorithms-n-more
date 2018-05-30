@@ -32,7 +32,22 @@ int main(){
     printf("\n");
     linkedlist_pop_begin(linkedList);
     linkedlist_print(linkedList);
-    printf("\n");   
+    printf("\n");
+    linkedlist_pop_end(linkedList);
+    printf("\n");
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_pop_end(linkedList);
+    printf("\n");
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_pop_end(linkedList);
+    printf("\n");
+    linkedlist_print(linkedList);
+    printf("\n");
+    linkedlist_push_begin(linkedList, 55);
+    linkedlist_print(linkedList);
+    printf("\n");
 
     return 0;
 }
