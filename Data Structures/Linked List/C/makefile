@@ -7,3 +7,4 @@ linkedlist.o : linkedlist.c linkedlist.h
 
 clean:
 	-rm *.o
+	-rm main

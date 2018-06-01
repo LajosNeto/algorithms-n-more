@@ -63,6 +63,8 @@ int main(){
     linkedlist_insert_at(linkedList, 4, 77);
     linkedlist_print(linkedList);
     printf("\n");
+    printf("%d",linkedlist_value_at(linkedList, 3));
+    printf("\n");
 
     return 0;
 }

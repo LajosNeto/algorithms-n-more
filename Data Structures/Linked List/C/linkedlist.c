@@ -132,12 +132,24 @@ void linkedlist_pop_end(LinkedList *linkedList){
     --linkedList->size;
 }
 
+int linkedlist_value_at(LinkedList *linkedList, int index){
+    if(index < 0 || index >= linkedList->size){
+        printf("Error - index out of bounds\n");
+        exit(EXIT_FAILURE);
+    }
+
+    LinkedListNode *temp = linkedList->head;
+    for(int i=0; i<index; i++) temp=temp->next;
+
+    return temp->value;
+}
+
 void linkedlist_print(LinkedList *linkedList){
     LinkedListNode *temp = linkedList->head;
     while(temp != NULL){
         printf("%d -> ", temp->value);
         temp = temp->next;
-    }
+    }   
 }
 
 int linkedlist_get_front(LinkedList *linkedList){
