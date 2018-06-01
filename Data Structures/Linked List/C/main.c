@@ -65,6 +65,10 @@ int main(){
     printf("\n");
     printf("%d",linkedlist_value_at(linkedList, 3));
     printf("\n");
+    linkedlist_delete_at(linkedList, 0);
+    printf("\n");
+    linkedlist_print(linkedList);
+    printf("\n");
 
     return 0;
 }

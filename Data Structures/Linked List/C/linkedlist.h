@@ -37,6 +37,8 @@ void linkedlist_insert_at(LinkedList *linkedList, int index, int value);
 void linkedlist_pop_begin(LinkedList *linkedList);
 // Remove the last node/value
 void linkedlist_pop_end(LinkedList *linkedList);
+// Remove node from a given index
+void linkedlist_delete_at(LinkedList *linkedList, int index);
 // Returns value store at a given index
 int linkedlist_value_at(LinkedList *linkedList, int index);
 // Print linked list values

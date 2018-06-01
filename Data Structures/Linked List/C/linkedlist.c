@@ -132,6 +132,32 @@ void linkedlist_pop_end(LinkedList *linkedList){
     --linkedList->size;
 }
 
+void linkedlist_delete_at(LinkedList *linkedList, int index){
+    if(index < 0 || index >= linkedList->size){
+        printf("Error - index out of bounds\n");
+        exit(EXIT_FAILURE);
+    }
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - linked list is empty\n");
+        exit(EXIT_FAILURE);
+    }
+
+    if(index == 0){
+        linkedlist_pop_begin(linkedList);
+    }
+    else{
+        LinkedListNode *actual_index = linkedList->head;
+        LinkedListNode *prev_index = linkedList->head;
+        for(int i=0; i<index; i++){
+            prev_index = actual_index;
+            actual_index = actual_index->next;
+        }
+        
+        prev_index->next = actual_index->next;
+        free(actual_index);
+    }
+}
+
 int linkedlist_value_at(LinkedList *linkedList, int index){
     if(index < 0 || index >= linkedList->size){
         printf("Error - index out of bounds\n");
