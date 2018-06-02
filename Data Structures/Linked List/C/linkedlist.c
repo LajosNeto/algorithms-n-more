@@ -183,6 +183,7 @@ void linkedlist_delete_value(LinkedList *linkedList, int value){
                 temp = temp->next;
                 temp_prev->next = temp;
                 free(temp_free);
+                --linkedList->size;
             }
         }
         else{
