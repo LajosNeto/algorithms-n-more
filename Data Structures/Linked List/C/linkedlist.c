@@ -158,6 +158,34 @@ void linkedlist_delete_at(LinkedList *linkedList, int index){
     }
 }
 
+void linkedlist_delete_value(LinkedList *linkedList, int value){
+    LinkedListNode *temp = linkedList->head;
+    LinkedListNode *temp_prev = linkedList->head;
+    
+    while (temp != NULL){
+        if(temp->value == value){
+            if(temp == linkedList->head){
+                linkedlist_pop_begin(linkedList);
+                temp = linkedList->head;
+            }
+            else if(temp == linkedList->tail){
+                linkedlist_pop_end(linkedList);
+                temp = NULL;
+            }
+            else{
+                LinkedListNode *temp_free = temp;
+                temp = temp->next;
+                temp_prev->next = temp;
+                free(temp_free);
+            }
+        }
+        else{
+            temp_prev = temp;
+            temp = temp->next;
+        }
+    } 
+}
+
 int linkedlist_value_at(LinkedList *linkedList, int index){
     if(index < 0 || index >= linkedList->size){
         printf("Error - index out of bounds\n");

@@ -39,6 +39,8 @@ void linkedlist_pop_begin(LinkedList *linkedList);
 void linkedlist_pop_end(LinkedList *linkedList);
 // Remove node from a given index
 void linkedlist_delete_at(LinkedList *linkedList, int index);
+// Remove a given value (all occurrences)
+void linkedlist_delete_value(LinkedList *linkedList, int value);
 // Returns value store at a given index
 int linkedlist_value_at(LinkedList *linkedList, int index);
 // Print linked list values
