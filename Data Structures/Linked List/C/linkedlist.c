@@ -159,6 +159,12 @@ void linkedlist_delete_at(LinkedList *linkedList, int index){
 }
 
 void linkedlist_delete_value(LinkedList *linkedList, int value){
+    
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - Empty linked list\n");
+        exit(EXIT_FAILURE);
+    }
+
     LinkedListNode *temp = linkedList->head;
     LinkedListNode *temp_prev = linkedList->head;
     
