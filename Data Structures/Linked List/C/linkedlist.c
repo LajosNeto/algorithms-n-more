@@ -220,3 +220,20 @@ int linkedlist_get_front(LinkedList *linkedList){
 int linkedlist_get_back(LinkedList *linkedList){
     return linkedList->tail->value;
 }
+
+void linkedlist_reverse(LinkedList *linkedList){
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - Empty linked list.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    LinkedListNode *temp_prev = linkedList->head;
+    LinkedListNode *temp_actual = temp_prev->next;
+
+    while(temp_actual){
+        temp_prev->next = temp_actual->next;
+        temp_actual->next = linkedList->head;
+        linkedList->head = temp_actual;
+        temp_actual = temp_prev->next;
+    }
+}

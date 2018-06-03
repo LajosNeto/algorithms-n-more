@@ -49,5 +49,7 @@ void linkedlist_print(LinkedList *linkedList);
 int linkedlist_get_front(LinkedList *linkedList);
 // Returns back item
 int linkedlist_get_back(LinkedList *linkedList);
+// Reverse the linked list order
+void linkedlist_reverse(LinkedList *linkedList);
 
 #endif  // PROJECT_LINKEDLIST_H
