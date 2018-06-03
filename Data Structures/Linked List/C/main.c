@@ -19,10 +19,11 @@ int main(){
     printf("\n");
     linkedlist_print(linkedList);
     printf("\n");
-    //linkedlist_delete_value(linkedList, 22);
     linkedlist_reverse(linkedList);
     printf("\n");
     linkedlist_print(linkedList);
+    printf("\n");
+    printf("%d", linkedlist_nth_from_end(linkedList, 1));
     printf("\n");
 
     return 0;

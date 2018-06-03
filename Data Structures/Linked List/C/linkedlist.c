@@ -237,3 +237,22 @@ void linkedlist_reverse(LinkedList *linkedList){
         temp_actual = temp_prev->next;
     }
 }
+
+int linkedlist_nth_from_end(LinkedList *linkedList, int index){
+    if(index < 0 || index >= linkedList->size){
+        printf("Error - index out of bounds.\n");
+        exit(EXIT_FAILURE);
+    }
+    if(linkedlist_is_empty(linkedList)){
+        printf("Error - empty linked list.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    LinkedListNode* temp = linkedList->head;
+    int last_position = linkedList->size-1;
+    int nth_position = last_position-index;
+
+    for(int i=0; i<nth_position; i++) temp = temp->next;
+
+    return temp->value;
+}

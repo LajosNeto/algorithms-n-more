@@ -51,5 +51,7 @@ int linkedlist_get_front(LinkedList *linkedList);
 int linkedlist_get_back(LinkedList *linkedList);
 // Reverse the linked list order
 void linkedlist_reverse(LinkedList *linkedList);
+// Returns n-th element from end
+int linkedlist_nth_from_end(LinkedList *linkedList, int index);
 
 #endif  // PROJECT_LINKEDLIST_H
