@@ -28,6 +28,8 @@ namespace linkedlist {
         int GetSize();
         // Check if linked list is empty
         int IsEmpty();
+        // Get first node value
+        int GetFront();
         // Push new node in front
         void PushFront(int value);
         // Push new node in back

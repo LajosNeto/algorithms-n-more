@@ -35,6 +35,14 @@ namespace linkedlist {
 
     int LinkedList::IsEmpty(){ return (head == NULL) ? 1 : 0; }
 
+    int LinkedList::GetFront(){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list\n";
+            exit(EXIT_FAILURE);
+        }
+        return head->value;
+    }
+
     void LinkedList::PushFront(int value){
         LinkedListNode *new_node = NewNode(value);
 

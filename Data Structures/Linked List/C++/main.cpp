@@ -18,7 +18,9 @@ int main(int argc, char const *argv[]){
     linkedList.PushBack(40);
     linkedList.PushBack(90);
     linkedList.Print();
-    
+    std::cout << "\n";
+    std::cout << "First item : " << linkedList.GetFront();
+
     std::cout << "\n";
     return 0;
 }
