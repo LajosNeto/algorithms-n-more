@@ -20,10 +20,16 @@ namespace linkedlist {
         public:
         // Constructor
         LinkedList();
+        // Creates a new node
+        LinkedListNode *NewNode(int value);
+        // Print the linked list
+        void Print();
         // Returns the size of the linked list
         int GetSize();
         // Check if linked list is empty
         int IsEmpty();
+        // Push new node in front
+        void PushFront(int value);
         
         private:
         LinkedListNode *head, *tail;

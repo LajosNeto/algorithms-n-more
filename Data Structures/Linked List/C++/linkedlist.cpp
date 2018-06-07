@@ -16,7 +16,36 @@ namespace linkedlist {
         total_size = 0;
     }
 
+    LinkedListNode* LinkedList::NewNode(int value){
+        LinkedListNode *new_node = new LinkedListNode;
+        new_node->value = value;
+        new_node->next = NULL;
+        return new_node;
+    }
+
+    void LinkedList::Print(){
+        LinkedListNode *temp = head;
+        while(temp!=NULL){ 
+            std::cout << temp->value << " -> ";
+            temp = temp->next;
+        }
+    }
+
     int LinkedList::GetSize(){ return total_size; }
 
     int LinkedList::IsEmpty(){ return (head == NULL) ? 1 : 0; }
+
+    void LinkedList::PushFront(int value){
+        LinkedListNode *new_node = NewNode(value);
+
+        if(IsEmpty()){
+            head = new_node;
+            tail = new_node;
+            ++total_size;
+        }
+        else{
+            new_node->next = head;
+            head = new_node;
+        }
+    }
 }

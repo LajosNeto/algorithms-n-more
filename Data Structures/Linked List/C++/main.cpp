@@ -13,6 +13,11 @@ int main(int argc, char const *argv[]){
     linkedlist::LinkedList linkedList;
     std::cout << "\n" << linkedList.GetSize() << "\n";
     std::cout << "\n" << linkedList.IsEmpty() << "\n";
+    linkedList.PushFront(10);
+    linkedList.PushFront(50);
+    linkedList.Print();
     
+    
+    std::cout << "\n";
     return 0;
 }
