@@ -48,4 +48,18 @@ namespace linkedlist {
             head = new_node;
         }
     }
+
+    void LinkedList::PushBack(int value){
+        LinkedListNode *new_node = NewNode(value);
+
+        if(IsEmpty()){
+            head = new_node;
+            tail = new_node;
+            ++total_size;
+        }
+        else{
+            tail->next = new_node;
+            tail = new_node;
+        }
+    }
 }

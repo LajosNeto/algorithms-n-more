@@ -15,8 +15,9 @@ int main(int argc, char const *argv[]){
     std::cout << "\n" << linkedList.IsEmpty() << "\n";
     linkedList.PushFront(10);
     linkedList.PushFront(50);
+    linkedList.PushBack(40);
+    linkedList.PushBack(90);
     linkedList.Print();
-    
     
     std::cout << "\n";
     return 0;

@@ -30,6 +30,8 @@ namespace linkedlist {
         int IsEmpty();
         // Push new node in front
         void PushFront(int value);
+        // Push new node in back
+        void PushBack(int value);
         
         private:
         LinkedListNode *head, *tail;
