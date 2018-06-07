@@ -22,6 +22,8 @@ namespace linkedlist {
         LinkedList();
         // Returns the size of the linked list
         int GetSize();
+        // Check if linked list is empty
+        int IsEmpty();
         
         private:
         LinkedListNode *head, *tail;

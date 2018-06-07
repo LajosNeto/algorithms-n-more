@@ -17,4 +17,6 @@ namespace linkedlist {
     }
 
     int LinkedList::GetSize(){ return total_size; }
+
+    int LinkedList::IsEmpty(){ return (head == NULL) ? 1 : 0; }
 }
