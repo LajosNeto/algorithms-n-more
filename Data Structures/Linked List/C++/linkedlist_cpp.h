@@ -30,6 +30,8 @@ namespace linkedlist {
         int IsEmpty();
         // Get first node value
         int GetFront();
+        // Get last node value
+        int GetBack();
         // Push new node in front
         void PushFront(int value);
         // Push new node in back

@@ -20,6 +20,8 @@ int main(int argc, char const *argv[]){
     linkedList.Print();
     std::cout << "\n";
     std::cout << "First item : " << linkedList.GetFront();
+    std::cout << "\n";
+    std::cout << "Last item : " << linkedList.GetBack();
 
     std::cout << "\n";
     return 0;
