@@ -36,6 +36,8 @@ namespace linkedlist {
         void PushFront(int value);
         // Push new node in back
         void PushBack(int value);
+        // Returns the value from a given index
+        int ValueAt(int index);
         
         private:
         LinkedListNode *head, *tail;

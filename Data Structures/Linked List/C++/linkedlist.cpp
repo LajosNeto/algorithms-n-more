@@ -62,6 +62,7 @@ namespace linkedlist {
         else{
             new_node->next = head;
             head = new_node;
+            ++total_size;
         }
     }
 
@@ -76,6 +77,18 @@ namespace linkedlist {
         else{
             tail->next = new_node;
             tail = new_node;
+            ++total_size;
         }
+    }
+
+    int LinkedList::ValueAt(int index){
+        if(index < 0 || index >= total_size){
+            std::cout << "Error - index out of range.";
+            exit(EXIT_FAILURE);
+        }
+        LinkedListNode *temp = head;
+        for(int i=0; i<index; i++) temp = temp->next;
+
+        return temp->value;
     }
 }
