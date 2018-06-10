@@ -24,7 +24,12 @@ int main(int argc, char const *argv[]){
     std::cout << "Last item : " << linkedList.GetBack();
     std::cout << "\n";
     std::cout << "Value at given index: " << linkedList.ValueAt(2);
-
+    std::cout << "\n";
+    linkedList.PopFront();
+    linkedList.Print();
+    std::cout << "\n";
+    linkedList.PopFront();
+    linkedList.Print();
 
     std::cout << "\n";
     return 0;

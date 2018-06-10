@@ -81,9 +81,20 @@ namespace linkedlist {
         }
     }
 
+    void LinkedList::PopFront(){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        LinkedListNode *temp_free = head;
+        head = head->next;
+        free(temp_free);
+    }
+
     int LinkedList::ValueAt(int index){
         if(index < 0 || index >= total_size){
-            std::cout << "Error - index out of range.";
+            std::cout << "Error - index out of range.\n";
             exit(EXIT_FAILURE);
         }
         LinkedListNode *temp = head;
