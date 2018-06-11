@@ -30,6 +30,21 @@ int main(int argc, char const *argv[]){
     std::cout << "\n";
     linkedList.PopBack();
     linkedList.Print();
+    std::cout << "\n";
+    linkedList.InsertAt(0,55);
+    linkedList.Print();
+    std::cout << "\n";
+    linkedList.InsertAt(1,66);
+    linkedList.Print();
+    std::cout << "\n";
+    linkedList.InsertAt(3,77);
+    linkedList.Print();
+    std::cout << "\n";
+    linkedList.InsertAt(4,99);
+    linkedList.Print();
+
+
+
 
     std::cout << "\n";
     return 0;

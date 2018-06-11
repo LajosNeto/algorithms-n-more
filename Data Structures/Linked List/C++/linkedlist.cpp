@@ -120,6 +120,25 @@ namespace linkedlist {
         }
     }
 
+    void LinkedList::InsertAt(int index, int value){
+        if(index < 0 || index >= total_size){
+            std::cout << "Error - index out of range.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        if(index == 0){
+            PushFront(value);
+        }
+        else{
+            LinkedListNode *new_node = NewNode(value);
+            LinkedListNode *temp = head;
+            for(int i=0; i<index-1; i++) temp = temp->next;
+            new_node->next = temp->next;
+            temp->next = new_node;
+            ++total_size;
+        } 
+    }
+
     int LinkedList::ValueAt(int index){
         if(index < 0 || index >= total_size){
             std::cout << "Error - index out of range.\n";

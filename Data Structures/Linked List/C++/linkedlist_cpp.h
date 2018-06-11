@@ -40,6 +40,8 @@ namespace linkedlist {
         void PopFront();
         // Pop back node
         void PopBack();
+        // Insert a new node in a given position
+        void InsertAt(int index, int value);
         // Returns the value from a given index
         int ValueAt(int index);
         
