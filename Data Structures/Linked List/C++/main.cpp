@@ -28,7 +28,7 @@ int main(int argc, char const *argv[]){
     linkedList.PopFront();
     linkedList.Print();
     std::cout << "\n";
-    linkedList.PopFront();
+    linkedList.PopBack();
     linkedList.Print();
 
     std::cout << "\n";

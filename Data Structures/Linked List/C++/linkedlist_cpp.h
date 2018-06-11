@@ -38,6 +38,8 @@ namespace linkedlist {
         void PushBack(int value);
         // Pop front node
         void PopFront();
+        // Pop back node
+        void PopBack();
         // Returns the value from a given index
         int ValueAt(int index);
         

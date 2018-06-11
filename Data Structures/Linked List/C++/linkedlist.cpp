@@ -90,6 +90,34 @@ namespace linkedlist {
         LinkedListNode *temp_free = head;
         head = head->next;
         free(temp_free);
+        --total_size;
+    }
+
+    void LinkedList::PopBack(){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        if(head == tail){
+            LinkedListNode *temp = head;
+            head = NULL;
+            tail = NULL;
+            free(temp);
+            --total_size;
+        }
+        else{
+            LinkedListNode *temp = head;
+            LinkedListNode *temp_prev = head;
+            while(temp->next != NULL){
+                temp_prev = temp;
+                temp = temp->next;
+            }
+            tail = temp_prev;
+            temp_prev->next = NULL;
+            free(temp);
+            --total_size;
+        }
     }
 
     int LinkedList::ValueAt(int index){
