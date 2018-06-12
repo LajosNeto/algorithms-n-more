@@ -42,6 +42,10 @@ int main(int argc, char const *argv[]){
     std::cout << "\n";
     linkedList.InsertAt(4,99);
     linkedList.Print();
+    linkedList.RemoveAt(3);
+    std::cout << "\n";
+    linkedList.Print();
+
 
 
 

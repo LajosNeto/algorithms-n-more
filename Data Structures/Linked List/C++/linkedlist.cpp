@@ -139,6 +139,36 @@ namespace linkedlist {
         } 
     }
 
+    void LinkedList::RemoveAt(int index){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        else if(index < 0 || index >= total_size){
+            std::cout << "Error - index out of range.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        else if(index == 0) PopFront();
+
+        else if(index == total_size-1) PopBack();
+
+        else{
+            LinkedListNode *temp = head;
+            LinkedListNode *temp_prev = head;
+            for(int i=0; i<index; i++){
+                temp_prev = temp;
+                temp = temp->next;
+            }
+            temp_prev->next = temp->next;
+            free(temp);
+        }
+
+        
+
+    }
+
     int LinkedList::ValueAt(int index){
         if(index < 0 || index >= total_size){
             std::cout << "Error - index out of range.\n";

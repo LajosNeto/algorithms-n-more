@@ -42,6 +42,8 @@ namespace linkedlist {
         void PopBack();
         // Insert a new node in a given position
         void InsertAt(int index, int value);
+        // Remove node in a given position
+        void RemoveAt(int index);
         // Returns the value from a given index
         int ValueAt(int index);
         
