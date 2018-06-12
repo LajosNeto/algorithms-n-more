@@ -164,8 +164,38 @@ namespace linkedlist {
             temp_prev->next = temp->next;
             free(temp);
         }
+    }
 
-        
+    void LinkedList::RemoveValue(int value){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        LinkedListNode *temp_prev = head;
+        LinkedListNode *temp = head;
+
+        while(temp!=NULL){
+            if(temp->value == value){
+                if(temp == head){
+                    PopFront();
+                    temp = head;
+                }
+
+                else if(temp == tail) PopBack();
+
+                else{
+                    LinkedListNode *temp_free = temp;
+                    temp_prev->next = temp->next;
+                    temp = temp->next;
+                    free(temp_free);
+                }
+            }
+            else{
+                temp_prev = temp;
+                temp = temp->next;
+            }
+        }
 
     }
 

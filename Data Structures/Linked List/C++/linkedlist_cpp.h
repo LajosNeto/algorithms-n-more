@@ -44,6 +44,8 @@ namespace linkedlist {
         void InsertAt(int index, int value);
         // Remove node in a given position
         void RemoveAt(int index);
+        // Remove all occurrences of a given value
+        void RemoveValue(int value);
         // Returns the value from a given index
         int ValueAt(int index);
         

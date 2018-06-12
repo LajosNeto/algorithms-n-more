@@ -13,10 +13,10 @@ int main(int argc, char const *argv[]){
     linkedlist::LinkedList linkedList;
     std::cout << "\n" << linkedList.GetSize() << "\n";
     std::cout << "\n" << linkedList.IsEmpty() << "\n";
-    linkedList.PushFront(10);
+    linkedList.PushFront(55);
     linkedList.PushFront(50);
-    linkedList.PushBack(40);
-    linkedList.PushBack(90);
+    linkedList.PushBack(55);
+    linkedList.PushBack(55);
     linkedList.Print();
     std::cout << "\n";
     std::cout << "First item : " << linkedList.GetFront();
@@ -34,21 +34,23 @@ int main(int argc, char const *argv[]){
     linkedList.InsertAt(0,55);
     linkedList.Print();
     std::cout << "\n";
-    linkedList.InsertAt(1,66);
+    linkedList.InsertAt(1,55);
     linkedList.Print();
     std::cout << "\n";
     linkedList.InsertAt(3,77);
     linkedList.Print();
     std::cout << "\n";
-    linkedList.InsertAt(4,99);
+    linkedList.InsertAt(4,55);
     linkedList.Print();
     linkedList.RemoveAt(3);
     std::cout << "\n";
     linkedList.Print();
-
-
-
-
+    linkedList.PushBack(33);
+    std::cout << "\n";
+    linkedList.Print();
+    linkedList.RemoveValue(55);
+    std::cout << "\n";
+    linkedList.Print();
 
     std::cout << "\n";
     return 0;
