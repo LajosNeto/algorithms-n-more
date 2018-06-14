@@ -48,6 +48,8 @@ namespace linkedlist {
         void RemoveValue(int value);
         // Reverse the linked list
         void Reverse();
+        // Returns the n-th element starting from the back
+        int NthFromEnd(int index);
         // Returns the value from a given index
         int ValueAt(int index);
         

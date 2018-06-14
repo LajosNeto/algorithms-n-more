@@ -163,6 +163,7 @@ namespace linkedlist {
             }
             temp_prev->next = temp->next;
             free(temp);
+            --total_size;
         }
     }
 
@@ -189,6 +190,7 @@ namespace linkedlist {
                     temp_prev->next = temp->next;
                     temp = temp->next;
                     free(temp_free);
+                    --total_size;
                 }
             }
             else{
@@ -217,11 +219,29 @@ namespace linkedlist {
         }
     }
 
+    int LinkedList::NthFromEnd(int index){
+       if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        int index_from_start = (total_size-index)-1;
+        LinkedListNode *temp = head;
+        for (int i=0; i<=index_from_start; i++) temp = temp->next;
+        return temp->value;
+    }
+
     int LinkedList::ValueAt(int index){
         if(index < 0 || index >= total_size){
             std::cout << "Error - index out of range.\n";
             exit(EXIT_FAILURE);
         }
+
+        if(index < 0 || index > total_size){
+            std::cout << "Error - index out of range.\n";
+            exit(EXIT_FAILURE);
+        }
+
         LinkedListNode *temp = head;
         for(int i=0; i<index; i++) temp = temp->next;
 

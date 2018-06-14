@@ -54,6 +54,8 @@ int main(int argc, char const *argv[]){
     linkedList.Reverse();
     std::cout << "\n";
     linkedList.Print();
+    std::cout << "\n";
+    std::cout << linkedList.NthFromEnd(1);
 
     std::cout << "\n";
     return 0;
