@@ -13,10 +13,10 @@ int main(int argc, char const *argv[]){
     linkedlist::LinkedList linkedList;
     std::cout << "\n" << linkedList.GetSize() << "\n";
     std::cout << "\n" << linkedList.IsEmpty() << "\n";
-    linkedList.PushFront(55);
+    linkedList.PushFront(25);
     linkedList.PushFront(50);
-    linkedList.PushBack(55);
-    linkedList.PushBack(55);
+    linkedList.PushBack(89);
+    linkedList.PushBack(10);
     linkedList.Print();
     std::cout << "\n";
     std::cout << "First item : " << linkedList.GetFront();
@@ -31,10 +31,10 @@ int main(int argc, char const *argv[]){
     linkedList.PopBack();
     linkedList.Print();
     std::cout << "\n";
-    linkedList.InsertAt(0,55);
+    linkedList.InsertAt(0,18);
     linkedList.Print();
     std::cout << "\n";
-    linkedList.InsertAt(1,55);
+    linkedList.InsertAt(1,40);
     linkedList.Print();
     std::cout << "\n";
     linkedList.InsertAt(3,77);
@@ -49,6 +49,9 @@ int main(int argc, char const *argv[]){
     std::cout << "\n";
     linkedList.Print();
     linkedList.RemoveValue(55);
+    std::cout << "\n";
+    linkedList.Print();
+    linkedList.Reverse();
     std::cout << "\n";
     linkedList.Print();
 

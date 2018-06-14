@@ -46,6 +46,8 @@ namespace linkedlist {
         void RemoveAt(int index);
         // Remove all occurrences of a given value
         void RemoveValue(int value);
+        // Reverse the linked list
+        void Reverse();
         // Returns the value from a given index
         int ValueAt(int index);
         

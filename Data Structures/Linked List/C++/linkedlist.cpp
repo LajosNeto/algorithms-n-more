@@ -196,7 +196,25 @@ namespace linkedlist {
                 temp = temp->next;
             }
         }
+    }
 
+    void LinkedList::Reverse(){
+        if(IsEmpty()){
+            std::cout << "Error - empty linked list.\n";
+            exit(EXIT_FAILURE);
+        }
+
+        if(total_size != 1){
+            LinkedListNode *temp_prev = head;
+            LinkedListNode *temp = temp_prev->next;
+            
+            while(temp){
+                temp_prev->next = temp->next;
+                temp->next = head;
+                head = temp;
+                temp = temp_prev->next;
+            }
+        }
     }
 
     int LinkedList::ValueAt(int index){
