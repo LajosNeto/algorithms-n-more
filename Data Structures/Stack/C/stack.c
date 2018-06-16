@@ -15,3 +15,27 @@ Stack *new_stack(){
     stack->tail = NULL;
     return stack;
 }
+
+void stack_print(Stack *stack){
+    StackNode *temp = stack->head;
+    while(temp != NULL){
+        printf("\n%d",temp->value);
+        temp = temp->next;
+    }
+}
+
+void stack_push(Stack *stack, int value){
+    StackNode *new_node = malloc(sizeof(StackNode));
+    new_node->value = value;
+    new_node->next = NULL;
+
+    if(stack->head == NULL){
+        stack->head = new_node;
+        stack->tail = new_node;
+    }
+    else{
+        new_node->next = stack->head;
+        stack->head = new_node;
+    }
+}
+

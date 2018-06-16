@@ -20,6 +20,10 @@ typedef struct Stack{
 
 // Creates a new stack
 Stack *new_stack();
+// Print the stack nodes values
+void stack_print(Stack *stack);
+// Push a new node on the stack
+void stack_push(Stack *stack, int value);
 
 
 #endif
