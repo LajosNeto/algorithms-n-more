@@ -28,14 +28,12 @@ void reallocate_data(DinArray *dinArray, int *newData, int new_capacity){
 
 void dinarray_check_resize(DinArray *dinArray, int newSize){
     if(newSize >= dinArray->totalCapacity){
-        printf("\nARRAY GROOOOOW\n");
         int new_capacity = dinArray->totalCapacity * GROW_FACTOR;
         int *newDinArrayData = (int*)malloc(sizeof(int)*new_capacity);
         reallocate_data(dinArray, newDinArrayData, new_capacity);
     }
     else if(newSize < dinArray->totalSize){
         if(dinArray->totalSize < dinArray->totalCapacity/GROW_FACTOR){
-            printf("ENTROU");
             int current_capacity = dinArray->totalCapacity;
             int new_capacity  = dinArray->totalCapacity/GROW_FACTOR;
 
