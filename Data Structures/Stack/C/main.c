@@ -19,7 +19,11 @@ int main(){
     printf("\n");
     printf("Top node value : %d",stack_top(stack));
     printf("\n");
-
+    stack_pop(stack);
+    printf("\n");
+    stack_print(stack);
+    printf("\n");
+   
     printf("\n");
     return 0;
 }

@@ -47,3 +47,20 @@ void stack_push(Stack *stack, int value){
     }
 }
 
+void stack_pop(Stack *stack){
+    StackNode *temp = stack->head;
+
+    if(stack->head == NULL){
+        printf("Error - empty stack\n");
+        exit(EXIT_FAILURE);
+    }
+    else if(stack->head == stack->tail){
+        stack->head = NULL;
+        stack->tail = NULL;
+        free(temp);
+    }
+    else{
+        stack->head = stack->head->next;
+        free(temp);
+    }
+}

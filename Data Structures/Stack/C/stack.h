@@ -28,6 +28,8 @@ int stack_is_empty(Stack *stack);
 int stack_top(Stack *stack);
 // Push a new node on the stack
 void stack_push(Stack *stack, int value);
+// Pop a node from the stack (the top node)
+void stack_pop(Stack *stack);
 
 
 #endif
