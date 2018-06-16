@@ -24,6 +24,10 @@ void stack_print(Stack *stack){
     }
 }
 
+int stack_is_empty(Stack *stack){
+    return (stack->head == NULL ? 1 : 0);
+}
+
 void stack_push(Stack *stack, int value){
     StackNode *new_node = malloc(sizeof(StackNode));
     new_node->value = value;
