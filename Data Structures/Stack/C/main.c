@@ -17,6 +17,9 @@ int main(){
     stack_print(stack);
     printf("\n");
     printf("\n");
+    printf("Top node value : %d",stack_top(stack));
+    printf("\n");
 
+    printf("\n");
     return 0;
 }

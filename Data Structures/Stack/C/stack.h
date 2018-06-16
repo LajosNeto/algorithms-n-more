@@ -24,6 +24,8 @@ Stack *new_stack();
 void stack_print(Stack *stack);
 // Check if stack is empty
 int stack_is_empty(Stack *stack);
+// Get the top node value
+int stack_top(Stack *stack);
 // Push a new node on the stack
 void stack_push(Stack *stack, int value);
 
