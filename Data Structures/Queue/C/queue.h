@@ -24,5 +24,7 @@ Queue *new_queue();
 int is_empty(Queue *queue);
 // Print queue nodes values
 void print(Queue *queue);
+// Push a new node into the queue
+void push(Queue *queue, int value);
 
 #endif

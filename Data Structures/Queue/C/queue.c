@@ -27,3 +27,18 @@ void print(Queue *queue){
         temp = temp->next;
     }
 }
+
+void push(Queue *queue, int value){
+    Node *new_node = malloc(sizeof(Node));
+    new_node->value = value;
+    new_node->next = NULL;
+
+    if(is_empty(queue)){
+        queue->head = new_node;
+        queue->tail = new_node;
+    }
+    else{
+        queue->tail->next = new_node;
+        queue->tail = new_node;
+    }
+}
