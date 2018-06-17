@@ -20,5 +20,7 @@ typedef struct Queue{
 
 // Creates a new queue
 Queue *new_queue();
+// Checks if the queue is empty
+int is_empty(Queue *queue);
 
 #endif

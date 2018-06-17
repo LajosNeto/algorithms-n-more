@@ -15,3 +15,7 @@ Queue *new_queue(){
     queue->tail = NULL;
     return queue;
 }
+
+int is_empty(Queue *queue){
+    return (queue->head == NULL ? 1 : 0);
+}

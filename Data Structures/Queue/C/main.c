@@ -12,6 +12,7 @@
 int main(){
 
     Queue *queue = new_queue();
+    printf("Is queue empty? - %d", is_empty(queue));
 
     printf("\n");
     return 0;
