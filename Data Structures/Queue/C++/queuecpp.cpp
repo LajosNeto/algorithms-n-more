@@ -21,6 +21,9 @@ namespace queue{
             std::cout << temp->value << " <- ";
             temp = temp->next;
         }
-    } 
+    }
 
+    int Queue::IsEmpty(){
+        return (head == NULL ? 1 : 0);
+    }
 }

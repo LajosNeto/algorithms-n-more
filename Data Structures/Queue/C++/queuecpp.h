@@ -23,6 +23,8 @@ namespace queue{
         Queue();
         // Print queue nodes values
         void Print();
+        // Check if queue is empty
+        int IsEmpty();
 
         private:
         Node *head;
