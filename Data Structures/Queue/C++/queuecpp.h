@@ -25,6 +25,8 @@ namespace queue{
         void Print();
         // Check if queue is empty
         int IsEmpty();
+        // Enqueue a new node into de queue
+        void Enqueue(int value);
 
         private:
         Node *head;

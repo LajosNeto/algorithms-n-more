@@ -26,4 +26,20 @@ namespace queue{
     int Queue::IsEmpty(){
         return (head == NULL ? 1 : 0);
     }
+
+    void Queue::Enqueue(int value){
+        Node *new_node = new Node;
+        new_node->value = value;
+        new_node->next = NULL;
+
+        if(IsEmpty()){
+            head = new_node;
+            tail = new_node;
+        }
+        else{
+            new_node->next = head;
+            head = new_node;
+        }
+    }
+
 }
