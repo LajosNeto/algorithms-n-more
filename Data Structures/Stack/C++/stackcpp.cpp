@@ -42,4 +42,15 @@ namespace stack{
         }
     }
 
+    void Stack::Pop(){
+        if(IsEmpty()){
+            std::cout << "Error - empty stack\n";
+            exit(EXIT_FAILURE);
+        }
+
+        Node *temp_free = head;
+        head = head->next;
+        free(temp_free);
+    }
+
 }

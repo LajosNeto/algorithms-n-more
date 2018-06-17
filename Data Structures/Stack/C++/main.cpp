@@ -19,7 +19,13 @@ int main(int argc, char const *argv[]){
     stack.Push(40);
     stack.Print();
     std::cout << "\n";
-
+    stack.Pop();
+    stack.Print();
+    std::cout << "\n";
+    stack.Pop();
+    stack.Print();
+    std::cout << "\n";
+    
     std::cout << "\n";
     return 0;
 }

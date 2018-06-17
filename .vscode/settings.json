@@ -33,7 +33,8 @@
         "ratio": "cpp",
         "system_error": "cpp",
         "tuple": "cpp",
-        "stack.h": "c"
+        "stack.h": "c",
+        "stack": "cpp"
     },
     "python.pythonPath": "/Users/lajosneto/.pyenv/versions/fullDLenv/bin/python"
 }

@@ -27,6 +27,8 @@ namespace stack{
         void Print();
         // Push a new node into the stack
         void Push(int value);
+        // Pop a node from the stack
+        void Pop();
 
         private:
         Node *head;
