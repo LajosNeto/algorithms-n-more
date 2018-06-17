@@ -23,6 +23,8 @@ namespace stack{
         Stack();
         // Check if stack is empty
         int IsEmpty();
+        // Print stack nodes values
+        void Print();
 
         private:
         Node *head;

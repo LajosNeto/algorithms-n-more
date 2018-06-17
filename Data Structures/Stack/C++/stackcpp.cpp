@@ -19,4 +19,12 @@ namespace stack{
         return (head == NULL ? 1 : 0);
     }
 
+    void Stack::Print(){
+        Node *temp = head;
+        while(temp!=NULL){
+            std::cout << temp->value << "\n|\n";
+            temp = temp->next;
+        }
+    }
+
 }
