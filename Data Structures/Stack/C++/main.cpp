@@ -4,3 +4,14 @@
 *
 *@author Lajos Onodi Neto
 */
+
+
+#include "stackcpp.h"
+#include <iostream>
+
+int main(int argc, char const *argv[]){
+
+    stack::Stack stack;
+
+
+}

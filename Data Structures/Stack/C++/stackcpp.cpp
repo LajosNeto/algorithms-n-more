@@ -4,3 +4,15 @@
 *
 *@author Lajos Onodi Neto
 */
+
+#include <iostream>
+#include "stackcpp.h"
+
+namespace stack{
+
+    Stack::Stack(){
+        head = NULL;
+        tail = NULL;
+    }
+
+}
