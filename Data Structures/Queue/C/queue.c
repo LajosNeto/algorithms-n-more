@@ -28,7 +28,7 @@ void print(Queue *queue){
     }
 }
 
-void push(Queue *queue, int value){
+void enqueue(Queue *queue, int value){
     Node *new_node = malloc(sizeof(Node));
     new_node->value = value;
     new_node->next = NULL;
@@ -43,7 +43,7 @@ void push(Queue *queue, int value){
     }
 }
 
-void pop(Queue *queue){
+void dequeue(Queue *queue){
     Node *temp_free = queue->head;
     
     if(is_empty(queue)){
