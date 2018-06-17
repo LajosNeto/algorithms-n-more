@@ -15,4 +15,12 @@ namespace queue{
         tail = NULL;
     }
 
+    void Queue::Print(){
+        Node *temp = head;
+        while(temp != NULL){
+            std::cout << temp->value << " <- ";
+            temp = temp->next;
+        }
+    } 
+
 }

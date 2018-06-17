@@ -21,6 +21,8 @@ namespace queue{
         public:
         // Constructor
         Queue();
+        // Print queue nodes values
+        void Print();
 
         private:
         Node *head;
