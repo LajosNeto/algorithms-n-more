@@ -25,6 +25,8 @@ namespace stack{
         int IsEmpty();
         // Print stack nodes values
         void Print();
+        // Push a new node into the stack
+        void Push(int value);
 
         private:
         Node *head;
