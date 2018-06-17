@@ -4,3 +4,21 @@
 *
 *@author Lajos Onodi Neto
 */
+
+#ifndef PROJECT_QUEUE_H
+#define PROJECT_QUEUE_H
+
+typedef struct Node{
+    int value;
+    struct Node *next;
+} Node;
+
+typedef struct Queue{
+    Node *head;
+    Node *tail;
+} Queue;
+
+// Creates a new queue
+Queue *new_queue();
+
+#endif
