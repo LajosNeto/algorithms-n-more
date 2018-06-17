@@ -19,6 +19,10 @@ int main(){
     push(queue, 30);
     push(queue, 40);
     print(queue);
+    pop(queue);
+    pop(queue);
+    printf("\n");
+    print(queue);
 
     printf("\n");
     return 0;

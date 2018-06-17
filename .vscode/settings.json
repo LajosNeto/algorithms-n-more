@@ -34,7 +34,8 @@
         "system_error": "cpp",
         "tuple": "cpp",
         "stack.h": "c",
-        "stack": "cpp"
+        "stack": "cpp",
+        "queue": "c"
     },
     "python.pythonPath": "/Users/lajosneto/.pyenv/versions/fullDLenv/bin/python"
 }

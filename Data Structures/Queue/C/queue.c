@@ -42,3 +42,22 @@ void push(Queue *queue, int value){
         queue->tail = new_node;
     }
 }
+
+void pop(Queue *queue){
+    Node *temp_free = queue->head;
+    
+    if(is_empty(queue)){
+        printf("\nError - empty queue\n");
+        exit(EXIT_FAILURE);
+    }
+
+    if(queue->head == queue->tail){
+        queue->head = NULL;
+        queue->tail = NULL;
+    }
+    else{
+        queue->head = queue->head->next;
+    }
+
+    free(temp_free);
+}

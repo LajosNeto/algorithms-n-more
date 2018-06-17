@@ -26,5 +26,7 @@ int is_empty(Queue *queue);
 void print(Queue *queue);
 // Push a new node into the queue
 void push(Queue *queue, int value);
+// Pop a node form the queue
+void pop(Queue *queue);
 
 #endif
