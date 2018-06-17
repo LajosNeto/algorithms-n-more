@@ -12,6 +12,8 @@
 int main(int argc, char const *argv[]){
 
     stack::Stack stack;
+    std::cout << stack.IsEmpty() << "\n";
 
-
+    std::cout << "\n";
+    return 0;
 }

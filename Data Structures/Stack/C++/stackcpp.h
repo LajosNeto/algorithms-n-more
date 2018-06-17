@@ -21,6 +21,8 @@ namespace stack{
         public:
         // Constructor
         Stack();
+        // Check if stack is empty
+        int IsEmpty();
 
         private:
         Node *head;

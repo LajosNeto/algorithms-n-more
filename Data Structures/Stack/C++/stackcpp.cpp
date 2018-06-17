@@ -15,4 +15,8 @@ namespace stack{
         tail = NULL;
     }
 
+    int Stack::IsEmpty(){
+        return (head == NULL ? 1 : 0);
+    }
+
 }
