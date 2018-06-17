@@ -27,6 +27,8 @@ namespace queue{
         int IsEmpty();
         // Enqueue a new node into de queue
         void Enqueue(int value);
+        // Dequeue a node from the queue
+        void Dequeue();
 
         private:
         Node *head;

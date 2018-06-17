@@ -37,9 +37,26 @@ namespace queue{
             tail = new_node;
         }
         else{
-            new_node->next = head;
-            head = new_node;
+            tail->next = new_node;
+            tail = new_node;
         }
+    }
+
+    void Queue::Dequeue(){
+        Node *temp_free = head;
+
+        if(IsEmpty()){
+            std::cout << "\nError - empty queue.\n";
+            exit(EXIT_FAILURE);
+        }
+        else if(head == tail){
+            head = NULL;
+            tail = NULL;
+        }
+        else{
+            head = head->next;
+        }
+        free(temp_free);
     }
 
 }

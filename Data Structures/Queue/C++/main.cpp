@@ -21,6 +21,11 @@ int main(int argc, char const *argv[])
     queue.Print();
     std::cout << "\n";
     std::cout << "Is queue empty? - " << queue.IsEmpty();
+    queue.Dequeue();
+    queue.Dequeue();
+    std::cout << "\n";
+    queue.Print();
+    std::cout << "\n";
 
     std::cout << "\n";
     return 0;
