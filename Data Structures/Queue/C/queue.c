@@ -19,3 +19,11 @@ Queue *new_queue(){
 int is_empty(Queue *queue){
     return (queue->head == NULL ? 1 : 0);
 }
+
+void print(Queue *queue){
+    Node *temp = queue->head;
+    while(temp != NULL){
+        printf("%d <- ", temp->value);
+        temp = temp->next;
+    }
+}

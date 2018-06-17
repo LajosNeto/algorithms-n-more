@@ -22,5 +22,7 @@ typedef struct Queue{
 Queue *new_queue();
 // Checks if the queue is empty
 int is_empty(Queue *queue);
+// Print queue nodes values
+void print(Queue *queue);
 
 #endif
