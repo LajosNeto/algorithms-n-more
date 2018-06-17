@@ -53,4 +53,8 @@ namespace stack{
         free(temp_free);
     }
 
+    int Stack::Top(){
+        return head->value;
+    }
+
 }

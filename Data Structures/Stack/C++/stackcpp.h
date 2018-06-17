@@ -29,6 +29,8 @@ namespace stack{
         void Push(int value);
         // Pop a node from the stack
         void Pop();
+        // Get curent top node value
+        int Top();
 
         private:
         Node *head;
