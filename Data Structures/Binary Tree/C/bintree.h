@@ -18,5 +18,6 @@ typedef struct BinTree{
     Node *root;
 } BinTree;
 
+BinTree *new_bintree();
 
 #endif
