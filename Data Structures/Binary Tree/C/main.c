@@ -11,7 +11,7 @@
 int main(){
 
     BinTree *binTree = new_bintree();
-    
+    put(binTree, 20);
     
     printf("\n\n");
     return 0;

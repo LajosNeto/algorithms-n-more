@@ -18,6 +18,9 @@ typedef struct BinTree{
     Node *root;
 } BinTree;
 
+// Creates a new binary tree
 BinTree *new_bintree();
+// Add a new node into the tree if not inserted already
+void put(BinTree *binTree, int value);
 
 #endif
