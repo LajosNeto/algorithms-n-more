@@ -22,5 +22,7 @@ typedef struct BinTree{
 BinTree *new_bintree();
 // Add a new node into the tree if not inserted already
 void put(BinTree *binTree, int value);
+// Inorder(Left/Root/Right) print of the binary tree
+void print_inorder(Node *root);
 
 #endif

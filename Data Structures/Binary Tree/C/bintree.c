@@ -25,21 +25,27 @@ Node *new_node(int value){
     return new_node;
 }
 
-Node *put_aux(Node *node, int value){
-    
-    if(node == NULL) return new_node(value);
+Node *put_aux(Node *root, int value){
 
-    else if(value < node->key) node->left = put_aux(node->left, value);
-    else if(value > node->key) node->right = put_aux(node->right, value);
-    else node->key = value;
+    if (root == NULL) return new_node(value);
+    else if(value < root->key) root->left = put_aux(root->left, value);
+    else if(value > root->key) root-> right = put_aux(root->right,value);
+    else root->key = value;
 
-    return node;
+    return root;
 }
 
 void put(BinTree *binTree, int value){
-    
-    Node *root = binTree->root;
-    if(root == NULL) root = new_node(value);
-    else root = put_aux(root, value);
+
+    binTree->root = put_aux(binTree->root, value);
 }
 
+void print_inorder(Node *node){
+    
+    if(node == NULL) {
+        return;
+    }
+    print_inorder(node->left);
+    printf("%d", node->key);
+    print_inorder(node->right);
+}
