@@ -46,6 +46,18 @@ void print_inorder(Node *node){
         return;
     }
     print_inorder(node->left);
-    printf("%d", node->key);
+    printf("%d ", node->key);
     print_inorder(node->right);
 }
+
+void print_preorder(Node *node){
+
+    if(node == NULL){
+        return;
+    }
+    printf("%d ", node->key);
+    print_preorder(node->left);
+    print_preorder(node->right);
+}
+
+

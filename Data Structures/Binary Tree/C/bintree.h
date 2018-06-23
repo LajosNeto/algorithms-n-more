@@ -24,5 +24,7 @@ BinTree *new_bintree();
 void put(BinTree *binTree, int value);
 // Inorder(Left/Root/Right) print of the binary tree
 void print_inorder(Node *root);
+// Preorder(Root/Left/Right) print of the binary tree
+void print_preorder(Node *root);
 
 #endif
