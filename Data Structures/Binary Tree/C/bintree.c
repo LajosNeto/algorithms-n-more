@@ -74,3 +74,12 @@ void print_increase_order(Node *root){
     print_inorder(root);
 }
 
+int min_value(Node *root){
+    int min = 0;
+    if(root->left == NULL){
+        return root->key;
+    }
+    min = min_value(root->left);
+    return min;
+}
+

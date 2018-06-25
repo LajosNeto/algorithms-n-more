@@ -30,5 +30,7 @@ void print_preorder(Node *root);
 void print_postorder(Node *root);
 // Prints all nodes values in increasing order
 void print_increase_order(Node *root);
+// Returns the min value in the binary tree
+int min_value(Node *root);
 
 #endif

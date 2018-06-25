@@ -21,6 +21,8 @@ int main(){
     print_preorder(binTree->root);
     printf("\n");
     print_increase_order(binTree->root);
+    printf("\n");
+    printf("Min value : %d",min_value(binTree->root));
     
     printf("\n\n");
     return 0;
