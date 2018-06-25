@@ -83,3 +83,12 @@ int min_value(Node *root){
     return min;
 }
 
+int max_value(Node *root){
+    int min = 0;
+    if(root->right == NULL){
+        return root->key;
+    }
+    min = max_value(root->right);
+    return min;
+}
+

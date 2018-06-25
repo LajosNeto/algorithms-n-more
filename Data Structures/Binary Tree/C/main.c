@@ -15,7 +15,11 @@ int main(){
     put(binTree, 20);
     put(binTree, 10);
     put(binTree, 50);
-    put(binTree, 25);
+    put(binTree, 55);
+    put(binTree, 60);
+    put(binTree, 100);
+    put(binTree, 70);
+    put(binTree, 63);
     print_inorder(binTree->root);
     printf("\n");
     print_preorder(binTree->root);
@@ -23,6 +27,8 @@ int main(){
     print_increase_order(binTree->root);
     printf("\n");
     printf("Min value : %d",min_value(binTree->root));
+    printf("\n");
+    printf("Max value : %d",max_value(binTree->root));
     
     printf("\n\n");
     return 0;

@@ -36,7 +36,6 @@
         "stack.h": "c",
         "stack": "cpp",
         "queue": "c",
-        "ostream": "c"
     },
     "python.pythonPath": "/Users/lajosneto/.pyenv/versions/fullDLenv/bin/python"
 }

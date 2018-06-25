@@ -32,5 +32,7 @@ void print_postorder(Node *root);
 void print_increase_order(Node *root);
 // Returns the min value in the binary tree
 int min_value(Node *root);
+// Returns the max value in the binary tree
+int max_value(Node *root);
 
 #endif
