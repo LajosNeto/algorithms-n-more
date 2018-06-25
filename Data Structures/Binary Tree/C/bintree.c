@@ -60,4 +60,17 @@ void print_preorder(Node *node){
     print_preorder(node->right);
 }
 
+void print_postorder(Node *node){
+    
+    if(node == NULL){
+        return;
+    }
+    print_postorder(node->left);
+    print_postorder(node->right);
+    printf("%d ", node->key);
+}
+
+void print_increase_order(Node *root){
+    print_inorder(root);
+}
 

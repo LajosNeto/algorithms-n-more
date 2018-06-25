@@ -26,5 +26,9 @@ void put(BinTree *binTree, int value);
 void print_inorder(Node *root);
 // Preorder(Root/Left/Right) print of the binary tree
 void print_preorder(Node *root);
+// Postorder(Left/Right/Root)
+void print_postorder(Node *root);
+// Prints all nodes values in increasing order
+void print_increase_order(Node *root);
 
 #endif

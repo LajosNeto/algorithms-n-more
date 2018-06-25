@@ -19,6 +19,8 @@ int main(){
     print_inorder(binTree->root);
     printf("\n");
     print_preorder(binTree->root);
+    printf("\n");
+    print_increase_order(binTree->root);
     
     printf("\n\n");
     return 0;
