@@ -29,7 +29,9 @@ int main(){
     printf("Min value : %d",min_value(binTree->root));
     printf("\n");
     printf("Max value : %d",max_value(binTree->root));
-    
+    printf("\n");
+    printf("%d", check_value(binTree->root, 30));
+
     printf("\n\n");
     return 0;
 }

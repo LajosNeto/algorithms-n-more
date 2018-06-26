@@ -34,5 +34,7 @@ void print_increase_order(Node *root);
 int min_value(Node *root);
 // Returns the max value in the binary tree
 int max_value(Node *root);
+// Checks if value exists on the binary tree
+int check_value(Node *root, int value);
 
 #endif

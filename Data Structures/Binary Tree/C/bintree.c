@@ -92,3 +92,13 @@ int max_value(Node *root){
     return min;
 }
 
+int check_value(Node *root, int value){
+    
+    if(root == NULL){
+        return 0;
+    }
+    if(value > root->key) return check_value(root->right, value);
+    else if(value < root->key) return check_value(root->left, value);
+    return 1;
+}
+
