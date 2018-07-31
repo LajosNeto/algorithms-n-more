@@ -84,12 +84,12 @@ int min_value(Node *root){
 }
 
 int max_value(Node *root){
-    int min = 0;
+    int max = 0;
     if(root->right == NULL){
         return root->key;
     }
-    min = max_value(root->right);
-    return min;
+    max = max_value(root->right);
+    return max;
 }
 
 int check_value(Node *root, int value){
@@ -102,3 +102,12 @@ int check_value(Node *root, int value){
     return 1;
 }
 
+Node *get_parent(Node *root, int value){
+
+    if(root->key == value) return root;
+    if(root->left == NULL && root->right == NULL) return NULL;
+    if(root->left && root->left->key == value) return root;
+    if(root->right && root->right->key == value) return root;
+    if(root->right && value > root->key) return get_parent(root->right, value);
+    if(root->left && value < root->key) return get_parent(root->left, value);
+}

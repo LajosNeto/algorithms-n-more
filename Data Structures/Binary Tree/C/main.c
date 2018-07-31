@@ -31,6 +31,9 @@ int main(){
     printf("Max value : %d",max_value(binTree->root));
     printf("\n");
     printf("%d", check_value(binTree->root, 30));
+    printf("\n");
+    Node *node = get_parent(binTree->root, 55);
+    printf("%d", node->key);
 
     printf("\n\n");
     return 0;

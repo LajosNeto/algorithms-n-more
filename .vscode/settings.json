@@ -36,6 +36,8 @@
         "stack.h": "c",
         "stack": "cpp",
         "queue": "c",
+        "ios": "c",
+        "deque": "c"
     },
     "python.pythonPath": "/Users/lajosneto/.pyenv/versions/fullDLenv/bin/python"
 }
