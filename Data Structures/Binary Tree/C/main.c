@@ -34,6 +34,9 @@ int main(){
     printf("\n");
     Node *node = get_parent(binTree->root, 55);
     printf("%d", node->key);
+    printf("\n");
+    Node *valueNode = get_node(binTree->root, 20);
+    printf("%d", valueNode->key);
 
     printf("\n\n");
     return 0;

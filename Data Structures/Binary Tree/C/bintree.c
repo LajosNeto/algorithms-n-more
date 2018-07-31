@@ -102,6 +102,15 @@ int check_value(Node *root, int value){
     return 1;
 }
 
+Node *get_node(Node *root, int value){
+
+    if(root == NULL) return NULL;
+    if(root->key == value) return root;
+    
+    if(value > root->key) return get_node(root->right, value);
+    if(value < root->key) return get_node(root->left, value);
+}
+
 Node *get_parent(Node *root, int value){
 
     if(root->key == value) return root;

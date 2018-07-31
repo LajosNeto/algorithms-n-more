@@ -36,7 +36,10 @@ int min_value(Node *root);
 int max_value(Node *root);
 // Checks if value exists on the binary tree
 int check_value(Node *root, int value);
+// Returns the node holding a given value
+Node *get_node(Node *root, int value);
 // Returns the parent node from a given value
 Node *get_parent(Node *root, int value);
+
 
 #endif
