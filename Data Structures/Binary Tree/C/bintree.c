@@ -35,7 +35,7 @@ Node *put_aux(Node *root, int value){
     return root;
 }
 
-void put(BinTree *binTree, int value){
+void put(BinTree *binTree, int value){ 
 
     binTree->root = put_aux(binTree->root, value);
 }
@@ -111,6 +111,11 @@ Node *get_node(Node *root, int value){
     if(value < root->key) return get_node(root->left, value);
 }
 
+// Checks if the binary tree root is the given node. In this case, there is no
+// parent node for the root. Than It is always checked if one of the current node
+// children is the value we are looking for, if so, the current node is returned as the
+// parent. If the value is not within the current node children, we move forward 
+// deeper in the tree until we return NULL if the value is not found.
 Node *get_parent(Node *root, int value){
 
     if(root->key == value) return root;
@@ -119,4 +124,13 @@ Node *get_parent(Node *root, int value){
     if(root->right && root->right->key == value) return root;
     if(root->right && value > root->key) return get_parent(root->right, value);
     if(root->left && value < root->key) return get_parent(root->left, value);
+}
+
+
+int node_count(Node *root){
+
+    int count = 1;
+    if(root->left) count += node_count(root->left);
+    if(root->right) count += node_count(root->right);
+    return count;
 }

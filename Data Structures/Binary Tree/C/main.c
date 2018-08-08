@@ -37,6 +37,8 @@ int main(){
     printf("\n");
     Node *valueNode = get_node(binTree->root, 20);
     printf("%d", valueNode->key);
+    printf("\n");
+    printf("%d",node_count(binTree->root));
 
     printf("\n\n");
     return 0;
