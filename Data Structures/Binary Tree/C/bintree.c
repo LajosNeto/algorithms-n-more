@@ -126,6 +126,31 @@ Node *get_parent(Node *root, int value){
     if(root->left && value < root->key) return get_parent(root->left, value);
 }
 
+// Returns the sucessor fo a given node.
+// First we check if the given node key is the biggest one within the tree.
+// Then we check if the given node has a right child, if so, the sucessor is the minimum 
+// key from the given node right subtree. If the last case is not true, then we need to look
+// to the node's parent. We take the current node parent and check if the current node is the left
+// child of its parent, if so, the parent is the sucessor. If not, we keep on walking up the
+// tree until we find the first node that is the left child of its parent.
+Node *get_sucessor(Node *binTreeRoot, Node *node){
+
+    if(node->key == max_value(binTreeRoot)){
+        return node;
+    }
+
+    if(node->right){
+        int sucessor_key = min_value(node->right);
+        return get_node(binTreeRoot, sucessor_key);
+    }
+
+    Node *parent = get_parent(binTreeRoot, node->key);
+    while(parent!=NULL && node == parent->right){
+        node = parent;
+        parent = get_parent(binTreeRoot, node->key);
+    }
+    return parent;
+}
 
 int node_count(Node *root){
 

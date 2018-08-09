@@ -39,6 +39,10 @@ int main(){
     printf("%d", valueNode->key);
     printf("\n");
     printf("%d",node_count(binTree->root));
+    printf("\n");
+    Node *tempNode = get_node(binTree->root, 70);
+    Node *sucessorNode = get_sucessor(binTree->root, tempNode);
+    printf("%d", sucessorNode->key);
 
     printf("\n\n");
     return 0;

@@ -40,6 +40,8 @@ int check_value(Node *root, int value);
 Node *get_node(Node *root, int value);
 // Returns the parent node from a given value
 Node *get_parent(Node *root, int value);
+// Returns the sucessor of a given node
+Node *get_sucessor(Node *binTreeRoot, Node *node);
 // Returns the total node count in the tree
 int node_count(Node *root);
 
