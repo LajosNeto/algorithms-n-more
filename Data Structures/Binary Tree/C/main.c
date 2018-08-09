@@ -43,6 +43,8 @@ int main(){
     Node *tempNode = get_node(binTree->root, 70);
     Node *sucessorNode = get_sucessor(binTree->root, tempNode);
     printf("%d", sucessorNode->key);
+    printf("\n");
+    printf("%d", check_depth(binTree->root));
 
     printf("\n\n");
     return 0;

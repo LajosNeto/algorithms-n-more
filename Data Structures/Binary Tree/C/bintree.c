@@ -159,3 +159,15 @@ int node_count(Node *root){
     if(root->right) count += node_count(root->right);
     return count;
 }
+
+
+int check_depth(Node *root){
+
+    if(root == NULL) return 0;
+
+    int left_size = check_depth(root->left);
+    int right_size = check_depth(root->right);
+
+    if(left_size>right_size) return left_size+1;
+    else return right_size+1;
+}

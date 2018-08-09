@@ -44,6 +44,8 @@ Node *get_parent(Node *root, int value);
 Node *get_sucessor(Node *binTreeRoot, Node *node);
 // Returns the total node count in the tree
 int node_count(Node *root);
+// Returns the max depth of a binary tree
+int check_depth(Node *root);
 
 
 #endif
