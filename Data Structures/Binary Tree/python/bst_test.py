@@ -1,6 +1,6 @@
-# bintree_test.py
+# bst_test.py
 # 
-# Binary Tree implementation tests
+# Binary Tree (BST) implementation tests
 #
 # author Lajos Onodi Neto
 

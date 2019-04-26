@@ -1,6 +1,6 @@
-# bintree.py
+# bst.py
 # 
-# Binary Tree implementation
+# Binary Tree (BST) implementation
 #
 # author Lajos Onodi Neto
 
