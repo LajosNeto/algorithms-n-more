@@ -6,7 +6,7 @@
 
 import sys
 import unittest
-from bintree import Bst
+from bst import Bst
 
 class BstTest(unittest.TestCase):
     def __init__(self, *args, **kwargs):
@@ -25,6 +25,8 @@ class BstTest(unittest.TestCase):
     def test_display(self):
         print("Inorder traversal :")
         self.bst.inorder()
+        print("Preorder traversal :")
+        self.bst.preorder()
 
 if __name__ == '__main__':
     unittest.main()

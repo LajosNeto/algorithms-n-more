@@ -57,6 +57,18 @@ class Bst(object):
             self.__inorder(root.leftChild)
             print(root.value)
             self.__inorder(root.rightChild)
+    
+    def preorder(self):
+        """
+        Prints BST content following preorder walking
+        """
+        self.__preorder(self.root)
+
+    def __preorder(self, root):
+        if(root):
+            print(root.value)
+            self.__inorder(root.leftChild)
+            self.__inorder(root.rightChild)
 
 # if __name__ == '__main__' :
 #     bst = Bst()
