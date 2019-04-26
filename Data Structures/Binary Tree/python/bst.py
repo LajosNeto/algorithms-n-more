@@ -70,6 +70,18 @@ class Bst(object):
             self.__inorder(root.leftChild)
             self.__inorder(root.rightChild)
 
+    def postorder(self):
+        """
+        Prints BST content following preorder walking
+        """
+        self.__postorder(self.root)
+
+    def __postorder(self, root):
+        if(root):
+            self.__inorder(root.leftChild)
+            self.__inorder(root.rightChild)
+            print(root.value)
+
 # if __name__ == '__main__' :
 #     bst = Bst()
 #     bst.insert(10)

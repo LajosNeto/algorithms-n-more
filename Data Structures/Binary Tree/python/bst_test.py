@@ -27,6 +27,8 @@ class BstTest(unittest.TestCase):
         self.bst.inorder()
         print("Preorder traversal :")
         self.bst.preorder()
+        print("Postorder traversal :")
+        self.bst.postorder()
 
 if __name__ == '__main__':
     unittest.main()
