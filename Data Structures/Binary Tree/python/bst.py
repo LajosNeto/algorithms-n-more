@@ -81,6 +81,23 @@ class Bst(object):
             self.__inorder(root.leftChild)
             self.__inorder(root.rightChild)
             print(root.value)
+    
+    def search_value(self, value):
+        print(self.__search_value(self.root, value))
+
+    def __search_value(self, root, value):
+        if(root.value == value):
+            return True
+        if(value < root.value):
+            if(root.leftChild):
+                return self.__search_value(root.leftChild, value)
+            else:
+                 return False
+        else:
+            if(root.rightChild):
+                return self.__search_value(root.rightChild, value)
+            else:
+                return False
 
 # if __name__ == '__main__' :
 #     bst = Bst()
@@ -90,4 +107,4 @@ class Bst(object):
 #     bst.insert(20)
 #     bst.insert(2)
 #     bst.insert(12)
-#     bst.inorder()
+#     bst.search_value(20)
