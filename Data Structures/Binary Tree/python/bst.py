@@ -18,6 +18,7 @@ class Node(object):
 class Bst(object):
     def __init__(self):
         self.root = None
+        self.size = 0
     
     def insert(self, value):
         """
@@ -28,6 +29,7 @@ class Bst(object):
             return self.__insert(self.root, value)
         else:
             self.root = Node(value)
+            self.size += 1
             return True
         
     def __insert(self, root, value):
@@ -38,12 +40,14 @@ class Bst(object):
                 return self.__insert(root.leftChild, value)
             else:
                 root.leftChild = Node(value)
+                self.size += 1
                 return True
         else:
             if(root.rightChild):
                 return self.__insert(root.rightChild, value)
             else:
                 root.rightChild = Node(value)
+                self.size += 1
                 return True
 
     def inorder(self):
