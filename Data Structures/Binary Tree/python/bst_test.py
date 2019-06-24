@@ -22,6 +22,12 @@ class BstTest(unittest.TestCase):
         self.assertTrue(self.bst.insert(12))
         self.assertFalse(self.bst.insert(5))
     
+    def test_size_counter(self):
+        self.assertEqual(self.bst.size, 3)
+        self.assertTrue(self.bst.insert(20))
+        self.assertTrue(self.bst.insert(1))
+        self.assertEqual(self.bst.size, 5)
+    
     def test_display(self):
         print("Inorder traversal :")
         self.bst.dfs_inorder()
