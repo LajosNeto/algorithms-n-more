@@ -46,7 +46,7 @@ class Bst(object):
                 root.rightChild = Node(value)
                 return True
 
-    def inorder(self):
+    def dfs_inorder(self):
         """
         Prints BST content following inorder walking
         """
@@ -58,7 +58,7 @@ class Bst(object):
             print(root.value)
             self.__inorder(root.rightChild)
     
-    def preorder(self):
+    def dfs_preorder(self):
         """
         Prints BST content following preorder walking
         """
@@ -70,7 +70,7 @@ class Bst(object):
             self.__inorder(root.leftChild)
             self.__inorder(root.rightChild)
 
-    def postorder(self):
+    def dfs_postorder(self):
         """
         Prints BST content following preorder walking
         """
@@ -83,7 +83,10 @@ class Bst(object):
             print(root.value)
     
     def search_value(self, value):
-        print(self.__search_value(self.root, value))
+        """
+        Search for a given value inside the BST.
+        """
+        return self.__search_value(self.root, value)
 
     def __search_value(self, root, value):
         if(root.value == value):

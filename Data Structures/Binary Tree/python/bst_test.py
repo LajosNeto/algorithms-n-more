@@ -24,11 +24,11 @@ class BstTest(unittest.TestCase):
     
     def test_display(self):
         print("Inorder traversal :")
-        self.bst.inorder()
+        self.bst.dfs_inorder()
         print("Preorder traversal :")
-        self.bst.preorder()
+        self.bst.dfs_preorder()
         print("Postorder traversal :")
-        self.bst.postorder()
+        self.bst.dfs_postorder()
 
 if __name__ == '__main__':
     unittest.main()
