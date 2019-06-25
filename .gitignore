@@ -208,6 +208,6 @@ venv.bak/
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
-
+vscode
 
 # End of https://www.gitignore.io/api/c,c++,macos,python,visualstudiocode
