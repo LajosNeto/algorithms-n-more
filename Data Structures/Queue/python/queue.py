@@ -7,25 +7,52 @@ Queue data structure implementation
 
 
 import sys
+from abc import ABC, abstractmethod
 
-# TODO : Add AbstractQueue implementation
+
+class BaseQueue(ABC):
+    """
+    Base abstract class for queue implementation.
+    """
+    def __init__(self):
+        super().__init__()
+        self._size = 0
+    
+    def __len__(self):
+        return self._size
+    
+    def is_empty(self):
+        return self._size == 0
+    
+    @abstractmethod
+    def enqueue(self, value):
+        pass
+    
+    @abstractmethod
+    def dequeue(self):
+        pass
+    
+    @abstractmethod
+    def __iter__(self):
+        pass
 
 class _Node:
     """
-    Simple node used for representing values inside the queue based on linked list.
+    Simple node used for representing values 
+    inside the queue based on linked list.
     """
     def __init__(self, value):
         self.value = value
         self.next = None
 
-class LinkedListQueue:
+class LinkedListQueue(BaseQueue):
     """
     Queue implementation using linked list.
     """
     def __init__(self):
+        super().__init__()
         self._head = None
         self._tail = None
-        self._size = 0
     
     def __iter__(self):
         iterator = self._head
@@ -60,18 +87,17 @@ class LinkedListQueue:
         self._size -= 1
         return dequeued_value
     
-class ArrayQueue:
+class ArrayQueue(BaseQueue):
     """
     Queue implementation using arrays.
-    Even though arrays in Python being dynamic, here we 
-    simulate as if they were static.
+    Even though arrays in Python being dynamic, 
+    here we simulate as if they were static.
     """
-
     def __init__(self):
+        super().__init__()
         self._array = [None] * 5
         self._head = 0
         self._tail = 0
-        self._size = 0
     
     def __iter__(self):
         iterator = self._head
