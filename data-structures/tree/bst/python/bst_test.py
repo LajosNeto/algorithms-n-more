@@ -68,6 +68,26 @@ class BstTest(unittest.TestCase):
         self.bst.insert(22)
         self.bst.insert(23)
         self.assertEqual(self.bst.node_count(), 14)
+    
+    def test_min(self):
+        self.assertEqual(self.bst.min(), 5)
+        self.bst.insert(20)
+        self.bst.insert(12)
+        self.bst.insert(14)
+        self.assertEqual(self.bst.min(), 5)
+        self.bst.insert(13)
+        self.bst.insert(21)
+        self.assertEqual(self.bst.min(), 5)
+        self.bst.insert(22)
+        self.bst.insert(23)
+        self.bst.insert(6)
+        self.assertEqual(self.bst.min(), 5)
+        self.bst.insert(2)
+        self.assertEqual(self.bst.min(), 2)
+        self.bst.insert(1)
+        self.assertEqual(self.bst.min(), 1)
+        self.bst.insert(3)
+        self.assertEqual(self.bst.min(), 1)
 
 if __name__ == '__main__':
     unittest.main()

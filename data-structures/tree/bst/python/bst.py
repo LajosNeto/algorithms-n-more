@@ -140,3 +140,15 @@ class Bst(object):
         if not root:
             return 0
         return 1 + self.__node_count(root._left_child) + self.__node_count(root._right_child)
+    
+    def min(self):
+        """
+        Find the minimum value within the BST.
+        """
+        return self.__min(self._root)
+    
+    def __min(self, root):
+        if root._left_child is None:
+            return root._value
+        else:
+            return self.__min(root._left_child)
