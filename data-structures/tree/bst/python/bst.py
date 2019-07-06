@@ -4,6 +4,10 @@
 #
 # author Lajos Onodi Neto
 
+
+import queue
+
+
 class Node(object):
     """
     BST node that holds reference to left child, right child
@@ -86,6 +90,26 @@ class Bst(object):
             self.__inorder(root.rightChild)
             print(root.value)
     
+    def bfs(self):
+         """
+         Visits BST nodes following the Breadth-first 
+         tree traversal approach
+         """
+         node_queue = [self.root]
+         node_bfs_order = []
+         self.__bsf(node_queue, node_bfs_order)
+         return node_bfs_order
+
+    def __bsf(self, node_queue, node_bfs_order):
+        if node_queue:
+            cur_node = node_queue.pop()
+            if cur_node.leftChild:
+                node_queue.insert(0, cur_node.leftChild)
+            if cur_node.rightChild:
+                node_queue.insert(0, cur_node.rightChild)
+            node_bfs_order.append(cur_node.value)
+            self.__bsf(node_queue, node_bfs_order)
+    
     def search_value(self, value):
         """
         Search for a given value inside the BST.
@@ -106,12 +130,22 @@ class Bst(object):
             else:
                 return False
 
-# if __name__ == '__main__' :
-#     bst = Bst()
-#     bst.insert(10)
-#     bst.insert(5)
-#     bst.insert(15)
-#     bst.insert(20)
-#     bst.insert(2)
-#     bst.insert(12)
-#     bst.search_value(20)
+if __name__ == '__main__' :
+    bst = Bst()
+    bst.insert(10)
+    bst.insert(5)
+    bst.insert(15)
+    bst.insert(6)
+    bst.insert(2)
+    bst.insert(1)
+    bst.insert(3)
+    bst.insert(20)
+    bst.insert(12)
+    bst.insert(14)
+    bst.insert(13)
+    bst.insert(21)
+    bst.insert(22)
+    bst.insert(23)
+    bst.insert(24)
+    bst.insert(25)
+    bst.bfs()

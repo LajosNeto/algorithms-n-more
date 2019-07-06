@@ -35,6 +35,21 @@ class BstTest(unittest.TestCase):
         self.bst.dfs_preorder()
         print("Postorder traversal :")
         self.bst.dfs_postorder()
+    
+    def test_bfs(self):
+        self.bst.insert(6)
+        self.bst.insert(2)
+        self.bst.insert(1)
+        self.bst.insert(3)
+        self.bst.insert(20)
+        self.bst.insert(12)
+        self.bst.insert(14)
+        self.bst.insert(13)
+        self.bst.insert(21)
+        self.bst.insert(22)
+        self.bst.insert(23)
+        bfs_order = self.bst.bfs()
+        self.assertEqual(bfs_order, [10,5,15,2,6,12,20,1,3,14,21,13,22,23])
 
 if __name__ == '__main__':
     unittest.main()
