@@ -14,88 +14,88 @@ class Node(object):
     and also to the value stored within itself.
     """
     def __init__(self, value):
-        self.value = value
-        self.leftChild = None
-        self.rightChild = None
+        self._value = value
+        self._left_child = None
+        self._right_child = None
 
 
 class Bst(object):
     def __init__(self):
-        self.root = None
-        self.size = 0
+        self._root = None
+        self._size = 0
     
     def insert(self, value):
         """
         Recursively insert a new value inside the BST.
         Returns true if successful and false if value already exists.
         """
-        if(self.root):
-            return self.__insert(self.root, value)
+        if(self._root):
+            return self.__insert(self._root, value)
         else:
-            self.root = Node(value)
-            self.size += 1
+            self._root = Node(value)
+            self._size += 1
             return True
         
     def __insert(self, root, value):
-        if(root.value == value):
+        if(root._value == value):
             return False
-        elif value < root.value:
-            if(root.leftChild):
-                return self.__insert(root.leftChild, value)
+        elif value < root._value:
+            if(root._left_child):
+                return self.__insert(root._left_child, value)
             else:
-                root.leftChild = Node(value)
-                self.size += 1
+                root._left_child = Node(value)
+                self._size += 1
                 return True
         else:
-            if(root.rightChild):
-                return self.__insert(root.rightChild, value)
+            if(root._right_child):
+                return self.__insert(root._right_child, value)
             else:
-                root.rightChild = Node(value)
-                self.size += 1
+                root._right_child = Node(value)
+                self._size += 1
                 return True
 
     def dfs_inorder(self):
         """
         Prints BST content following inorder walking
         """
-        self.__inorder(self.root)
+        self.__inorder(self._root)
 
     def __inorder(self, root):
         if(root):
-            self.__inorder(root.leftChild)
-            print(root.value)
-            self.__inorder(root.rightChild)
+            self.__inorder(root._left_child)
+            print(root._value)
+            self.__inorder(root._right_child)
     
     def dfs_preorder(self):
         """
         Prints BST content following preorder walking
         """
-        self.__preorder(self.root)
+        self.__preorder(self._root)
 
     def __preorder(self, root):
         if(root):
-            print(root.value)
-            self.__inorder(root.leftChild)
-            self.__inorder(root.rightChild)
+            print(root._value)
+            self.__inorder(root._left_child)
+            self.__inorder(root._right_child)
 
     def dfs_postorder(self):
         """
         Prints BST content following preorder walking
         """
-        self.__postorder(self.root)
+        self.__postorder(self._root)
 
     def __postorder(self, root):
         if(root):
-            self.__inorder(root.leftChild)
-            self.__inorder(root.rightChild)
-            print(root.value)
+            self.__inorder(root._left_child)
+            self.__inorder(root._right_child)
+            print(root._value)
     
     def bfs(self):
          """
          Visits BST nodes following the Breadth-first 
          tree traversal approach
          """
-         node_queue = [self.root]
+         node_queue = [self._root]
          node_bfs_order = []
          self.__bsf(node_queue, node_bfs_order)
          return node_bfs_order
@@ -103,30 +103,30 @@ class Bst(object):
     def __bsf(self, node_queue, node_bfs_order):
         if node_queue:
             cur_node = node_queue.pop()
-            if cur_node.leftChild:
-                node_queue.insert(0, cur_node.leftChild)
-            if cur_node.rightChild:
-                node_queue.insert(0, cur_node.rightChild)
-            node_bfs_order.append(cur_node.value)
+            if cur_node._left_child:
+                node_queue.insert(0, cur_node._left_child)
+            if cur_node._right_child:
+                node_queue.insert(0, cur_node._right_child)
+            node_bfs_order.append(cur_node._value)
             self.__bsf(node_queue, node_bfs_order)
     
     def search_value(self, value):
         """
         Search for a given value inside the BST.
         """
-        return self.__search_value(self.root, value)
+        return self.__search_value(self._root, value)
 
     def __search_value(self, root, value):
-        if(root.value == value):
+        if(root._value == value):
             return True
-        if(value < root.value):
-            if(root.leftChild):
-                return self.__search_value(root.leftChild, value)
+        if(value < root._value):
+            if(root._left_child):
+                return self.__search_value(root._left_child, value)
             else:
                  return False
         else:
-            if(root.rightChild):
-                return self.__search_value(root.rightChild, value)
+            if(root._right_child):
+                return self.__search_value(root._right_child, value)
             else:
                 return False
 
