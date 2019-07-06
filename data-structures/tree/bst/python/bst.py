@@ -23,7 +23,7 @@ class Bst(object):
     def __init__(self):
         self._root = None
         self._size = 0
-    
+
     def insert(self, value):
         """
         Recursively insert a new value inside the BST.
@@ -35,7 +35,7 @@ class Bst(object):
             self._root = Node(value)
             self._size += 1
             return True
-        
+
     def __insert(self, root, value):
         if(root._value == value):
             return False
@@ -65,7 +65,7 @@ class Bst(object):
             self.__inorder(root._left_child)
             print(root._value)
             self.__inorder(root._right_child)
-    
+
     def dfs_preorder(self):
         """
         Prints BST content following preorder walking
@@ -89,16 +89,16 @@ class Bst(object):
             self.__inorder(root._left_child)
             self.__inorder(root._right_child)
             print(root._value)
-    
+
     def bfs(self):
-         """
-         Visits BST nodes following the Breadth-first 
-         tree traversal approach
-         """
-         node_queue = [self._root]
-         node_bfs_order = []
-         self.__bsf(node_queue, node_bfs_order)
-         return node_bfs_order
+        """
+        Visits BST nodes following the Breadth-first
+        tree traversal approach
+        """
+        node_queue = [self._root]
+        node_bfs_order = []
+        self.__bsf(node_queue, node_bfs_order)
+        return node_bfs_order
 
     def __bsf(self, node_queue, node_bfs_order):
         if node_queue:
@@ -109,7 +109,7 @@ class Bst(object):
                 node_queue.insert(0, cur_node._right_child)
             node_bfs_order.append(cur_node._value)
             self.__bsf(node_queue, node_bfs_order)
-    
+
     def search_value(self, value):
         """
         Search for a given value inside the BST.
@@ -123,29 +123,20 @@ class Bst(object):
             if(root._left_child):
                 return self.__search_value(root._left_child, value)
             else:
-                 return False
+                return False
         else:
             if(root._right_child):
                 return self.__search_value(root._right_child, value)
             else:
                 return False
 
-if __name__ == '__main__' :
-    bst = Bst()
-    bst.insert(10)
-    bst.insert(5)
-    bst.insert(15)
-    bst.insert(6)
-    bst.insert(2)
-    bst.insert(1)
-    bst.insert(3)
-    bst.insert(20)
-    bst.insert(12)
-    bst.insert(14)
-    bst.insert(13)
-    bst.insert(21)
-    bst.insert(22)
-    bst.insert(23)
-    bst.insert(24)
-    bst.insert(25)
-    bst.bfs()
+    def node_count(self):
+        """
+        Count how many nodes are stored within the BST.
+        """
+        return self.__node_count(self._root)
+
+    def __node_count(self, root):
+        if not root:
+            return 0
+        return 1 + self.__node_count(root._left_child) + self.__node_count(root._right_child)

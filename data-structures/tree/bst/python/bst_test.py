@@ -50,6 +50,24 @@ class BstTest(unittest.TestCase):
         self.bst.insert(23)
         bfs_order = self.bst.bfs()
         self.assertEqual(bfs_order, [10,5,15,2,6,12,20,1,3,14,21,13,22,23])
+    
+    def test_node_count(self):
+        self.bst.insert(6)
+        self.assertEqual(self.bst.node_count(), 4)
+        self.bst.insert(2)
+        self.assertEqual(self.bst.node_count(), 5)
+        self.bst.insert(1)
+        self.bst.insert(3)
+        self.bst.insert(20)
+        self.bst.insert(12)
+        self.bst.insert(14)
+        self.assertEqual(self.bst.node_count(), 10)
+        self.bst.insert(13)
+        self.bst.insert(21)
+        self.assertEqual(self.bst.node_count(), 12)
+        self.bst.insert(22)
+        self.bst.insert(23)
+        self.assertEqual(self.bst.node_count(), 14)
 
 if __name__ == '__main__':
     unittest.main()
