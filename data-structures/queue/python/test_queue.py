@@ -75,3 +75,6 @@ class QueueTest(unittest.TestCase):
         self.arr_queue.enqueue(10)
         self.arr_queue.enqueue(20)
         self.assertEqual(self.arr_queue.dequeue(), 10)
+        self.arr_queue.enqueue(30)
+        self.arr_queue.enqueue(40)
+        self.assertEqual([i for i in self.arr_queue], [20,30,40])

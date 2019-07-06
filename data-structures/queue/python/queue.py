@@ -111,8 +111,8 @@ class ArrayQueue(BaseQueue):
         return self._size == 0
     
     def enqueue(self, value):
-        if self._tail == len(self._array):
-            self._expand()
+        if self._tail == self._size:
+            self._array += [None] * 5 
         self._array[self._tail] = value
         self._tail += 1
         self._size += 1
@@ -124,14 +124,4 @@ class ArrayQueue(BaseQueue):
         self._array[self._head] = None
         self._head += 1
         self._size -= 1
-        self._shrink()
         return dequeued_value
-    
-    def _expand(self):
-        self._array += [None] * 5
-    
-    def _shrink(self):
-        if(self._size/len(self._array) >= 2):
-            aux_array = [i for i in a if i != None]
-            self._array = aux_array
-            self._size = len(self._array)
