@@ -89,6 +89,25 @@ class BstTest(unittest.TestCase):
         self.bst.insert(3)
         self.assertEqual(self.bst.min(), 1)
 
+    def test_max(self):
+        self.bst.insert(6)
+        self.assertEqual(self.bst.max(), 15)
+        self.bst.insert(2)
+        self.bst.insert(1)
+        self.bst.insert(3)
+        self.bst.insert(20)
+        self.assertEqual(self.bst.max(), 20)
+        self.bst.insert(12)
+        self.bst.insert(14)
+        self.assertEqual(self.bst.max(), 20)
+        self.bst.insert(13)
+        self.bst.insert(21)
+        self.assertEqual(self.bst.max(), 21)
+        self.bst.insert(22)
+        self.assertEqual(self.bst.max(), 22)
+        self.bst.insert(23)
+        self.assertEqual(self.bst.max(), 23)
+
 if __name__ == '__main__':
     unittest.main()
     sys.exit(0)

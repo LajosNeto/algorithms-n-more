@@ -152,3 +152,15 @@ class Bst(object):
             return root._value
         else:
             return self.__min(root._left_child)
+    
+    def max(self):
+        """
+        Find the maximum value within the BST.
+        """
+        return self.__max(self._root)
+    
+    def __max(self, root):
+        if root._right_child is None:
+            return root._value
+        else:
+            return self.__max(root._right_child)
