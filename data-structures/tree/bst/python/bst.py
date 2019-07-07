@@ -181,3 +181,21 @@ class Bst(object):
             return left_depth + 1
         else:
             return right_depth + 1
+    
+    def successor(self, value):
+        """
+        Returns the next-highest value from the BST after a given value.
+        If there's no successor, -1 is returned.
+        """
+        value_successor = self.__successor(self._root, value)
+        return value_successor if value_successor is not None else -1
+    
+    def __successor(self, root, value, sucessor=None):
+        if value < root._value:
+            sucessor = root._value
+            sucessor = self.__successor(root._left_child, value, sucessor)
+        elif value > root._value:
+            sucessor = self.__successor(root._right_child, value, sucessor)
+        elif value == root._value and root._right_child:
+            sucessor = self.__min(root._right_child)
+        return sucessor
