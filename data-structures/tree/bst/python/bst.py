@@ -164,3 +164,20 @@ class Bst(object):
             return root._value
         else:
             return self.__max(root._right_child)
+    
+    def height(self):
+        """
+        Returns the height of the BST.
+        """
+        return self.__height(self._root) - 1
+    
+    def __height(self, root):
+        if root is None:
+            return 0
+        left_depth = self.__height(root._left_child)
+        right_depth = self.__height(root._right_child)
+
+        if(left_depth > right_depth):
+            return left_depth + 1
+        else:
+            return right_depth + 1
