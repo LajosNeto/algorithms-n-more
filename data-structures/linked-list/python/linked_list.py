@@ -70,3 +70,14 @@ class LinkedList:
             new_node.next = self._head
             self._head = new_node
         self._size += 1
+
+    def push_back(self, value):
+        """Insert a value at the end of the list"""
+        new_node = _Node(value)
+        if self.empty():
+            self._head = new_node
+            self._tail = new_node
+        else:
+            self._tail.next = new_node
+            self._tail = new_node
+            self._size += 1

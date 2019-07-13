@@ -65,3 +65,12 @@ def test_back():
     assert ll.back() == 30
     ll.insert(3, 90)
     assert ll.back() == 30
+
+def test_push_back():
+    ll = LinkedList()
+    ll.push_back(10)
+    assert ll.back() == 10
+    ll.push_back(20)
+    assert ll.back() == 20
+    ll.push_back(30)
+    assert ll.back() == 30
