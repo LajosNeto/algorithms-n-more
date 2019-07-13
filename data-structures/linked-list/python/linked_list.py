@@ -40,18 +40,24 @@ class LinkedList:
     def insert(self, index, value):
         """Insert a vule at a given index position"""
         new_node = _Node(value)
-        if self.empty():
-            self._head = new_node
-            self._tail = new_node
+        if self.empty() or index == 0:
+            self.push_front(value)
         elif index >= self._size or index < 0:
             raise IndexError
-        elif index == 0:
-            new_node.next = self._head
-            self._head = new_node
         else:
             aux_pointer = self._head
             for i in range(index-1):
                 aux_pointer = aux_pointer.next
             new_node.next = aux_pointer.next
             aux_pointer.next = new_node
+            self._size += 1
+    
+    def push_front(self, value):
+        new_node = _Node(value)
+        if self.empty():
+            self._head = new_node
+            self._tail = new_node
+        else:
+            new_node.next = self._head
+            self._head = new_node
         self._size += 1

@@ -32,3 +32,12 @@ def test_empty():
     assert ll.empty() == True
     ll.insert(0, 10)
     assert ll.empty() == False
+
+def test_push_front():
+    ll = LinkedList()
+    ll.push_front(10)
+    assert [i for i in ll] == [10]
+    ll.push_front(20)
+    assert [i for i in ll] == [20, 10]
+    ll.push_front(30)
+    assert [i for i in ll] == [30, 20, 10]
