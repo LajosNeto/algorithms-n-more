@@ -38,7 +38,7 @@ class LinkedList:
         return self._size == 0
     
     def insert(self, index, value):
-        """Insert a vule at a given index position"""
+        """Insert a vulue at a given index position"""
         new_node = _Node(value)
         if self.empty() or index == 0:
             self.push_front(value)
@@ -53,6 +53,7 @@ class LinkedList:
             self._size += 1
     
     def push_front(self, value):
+        """Insert a value at the beginning of the list"""
         new_node = _Node(value)
         if self.empty():
             self._head = new_node
