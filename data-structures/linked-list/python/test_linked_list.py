@@ -50,3 +50,18 @@ def test_front():
     assert ll.front() == 20
     ll.push_front(30)
     assert ll.front() == 30
+
+def test_back():
+    ll = LinkedList()
+    ll.insert(0, 30)
+    assert ll.back() == 30
+    ll.insert(0, 20)
+    assert ll.back() == 30
+    ll.insert(0, 10)
+    assert ll.back() == 30
+    ll.insert(2, 40)
+    assert ll.back() == 30
+    ll.insert(1, 10)
+    assert ll.back() == 30
+    ll.insert(3, 90)
+    assert ll.back() == 30

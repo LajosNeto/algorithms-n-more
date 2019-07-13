@@ -56,6 +56,10 @@ class LinkedList:
         """Returns the first value on the list"""
         return self._head.value
     
+    def back(self):
+        """Returns the last value on the list"""
+        return self._tail.value
+    
     def push_front(self, value):
         """Insert a value at the beginning of the list"""
         new_node = _Node(value)
