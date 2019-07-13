@@ -26,3 +26,9 @@ def test_insert():
     assert [i for i in ll] == [10, 10, 20, 40, 30]
     ll.insert(3, 90)
     assert [i for i in ll] == [10, 10, 20, 90, 40, 30]
+
+def test_empty():
+    ll = LinkedList()
+    assert ll.empty() == True
+    ll.insert(0, 10)
+    assert ll.empty() == False

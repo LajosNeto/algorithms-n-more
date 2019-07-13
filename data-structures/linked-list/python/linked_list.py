@@ -33,10 +33,14 @@ class LinkedList:
             yield iterator.value
             iterator = iterator.next
     
+    def empty(self):
+        """Check if the list is empty"""
+        return self._size == 0
+    
     def insert(self, index, value):
         """Insert a vule at a given index position"""
         new_node = _Node(value)
-        if None in (self._head, self._tail):
+        if self.empty():
             self._head = new_node
             self._tail = new_node
         elif index >= self._size or index < 0:
