@@ -41,3 +41,12 @@ def test_push_front():
     assert [i for i in ll] == [20, 10]
     ll.push_front(30)
     assert [i for i in ll] == [30, 20, 10]
+
+def test_front():
+    ll = LinkedList()
+    ll.push_front(10)
+    assert ll.front() == 10
+    ll.push_front(20)
+    assert ll.front() == 20
+    ll.push_front(30)
+    assert ll.front() == 30

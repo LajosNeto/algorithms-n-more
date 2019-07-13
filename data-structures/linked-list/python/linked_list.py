@@ -52,6 +52,10 @@ class LinkedList:
             aux_pointer.next = new_node
             self._size += 1
     
+    def front(self):
+        """Returns the first value on the list"""
+        return self._head.value
+    
     def push_front(self, value):
         """Insert a value at the beginning of the list"""
         new_node = _Node(value)
