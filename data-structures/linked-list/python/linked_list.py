@@ -33,6 +33,9 @@ class LinkedList:
             yield iterator.value
             iterator = iterator.next
     
+    def __len__(self):
+        return self._size
+    
     def empty(self):
         """Check if the list is empty"""
         return self._size == 0

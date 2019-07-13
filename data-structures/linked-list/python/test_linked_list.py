@@ -74,3 +74,13 @@ def test_push_back():
     assert ll.back() == 20
     ll.push_back(30)
     assert ll.back() == 30
+
+def test_len():
+    ll = LinkedList()
+    assert len(ll) == 0
+    value = 10
+    value_check = 1
+    for i in range(10):
+        ll.push_front(value)
+        assert len(ll) == value_check
+        value_check += 1
