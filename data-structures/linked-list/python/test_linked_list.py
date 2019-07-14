@@ -84,3 +84,19 @@ def test_len():
         ll.push_front(value)
         assert len(ll) == value_check
         value_check += 1
+
+def test_pop_front():
+    ll = LinkedList()
+    with pytest.raises(IndexError):
+        ll.pop_front()
+    ll.push_front(10)
+    assert ll._head.value == 10
+    assert ll._tail.value == 10
+    assert ll.pop_front() == 10
+    ll.push_front(20)
+    ll.push_front(30)
+    assert ll._head.value == 30
+    assert ll._tail.value == 20
+    assert ll.pop_front() == 30
+    assert ll._head.value == 20
+    assert ll._tail.value == 20

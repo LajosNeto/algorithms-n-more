@@ -84,3 +84,17 @@ class LinkedList:
             self._tail.next = new_node
             self._tail = new_node
             self._size += 1
+    
+    def pop_front(self):
+        """Removes and returns the first value from the list"""
+        if self.empty():
+            raise IndexError("Empty List")
+        if self._size == 1:
+            pop_value = self._head.value
+            self._head = None
+            self._tail = None
+        else:
+            pop_value = self._head.value
+            self._head = self._head.next
+        self._size -= 1
+        return pop_value
