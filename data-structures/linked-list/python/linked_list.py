@@ -40,6 +40,17 @@ class LinkedList:
         """Check if the list is empty"""
         return self._size == 0
     
+    def value_at(self, index):
+        """Returns the value from the element at a given index"""
+        if index >= self._size or index < 0:
+            raise IndexError
+        if self.empty():
+            raise IndexError("Empty List")
+        aux_pointer = self._head
+        for _ in range(index):
+            aux_pointer = aux_pointer.next
+        return aux_pointer.value
+
     def insert(self, index, value):
         """Insert a vulue at a given index position"""
         new_node = _Node(value)
@@ -116,3 +127,4 @@ class LinkedList:
             self._tail.next = None
         self._size -= 1
         return pop_value
+    

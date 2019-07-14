@@ -123,3 +123,20 @@ def test_pop_back():
     assert ll.pop_back() == 30
     assert ll._head.value == 80
     assert ll._tail.value == 50
+
+def test_value_at():
+    ll = LinkedList()
+    ll.insert(0, 60)
+    ll.insert(0, 50)
+    ll.insert(0, 40)
+    ll.insert(0, 30)
+    ll.insert(0, 20)
+    ll.insert(0, 10)
+    assert ll.value_at(0) == 10
+    assert ll.value_at(1) == 20
+    assert ll.value_at(2) == 30
+    assert ll.value_at(3) == 40
+    assert ll.value_at(4) == 50
+    assert ll.value_at(5) == 60
+    with pytest.raises(IndexError):
+        ll.value_at(6)
