@@ -46,3 +46,12 @@ class Stack:
             new_node.next = self._top
             self._top = new_node
         self._size += 1
+    
+    def pop(self):
+        """Pop value on top of the stack"""
+        if self.empty():
+            raise IndexError("Empty stack")
+        pop_value = self._top.value
+        self._top = self._top.next
+        self._size -= 1
+        return pop_value
