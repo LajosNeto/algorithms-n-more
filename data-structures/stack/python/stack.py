@@ -24,6 +24,25 @@ class Stack:
         self._bottom = None
         self._size = 0
     
+    def __iter__(self):
+        iterator = self._top
+        while True:
+            if iterator is None:
+                return
+            yield iterator.value
+            iterator = iterator.next
+    
     def empty(self):
         """Check if the list is empty"""
         return self._size == 0
+    
+    def push(self, value):
+        """Push new value on top of the stack"""
+        new_node = _Node(value)
+        if self.empty():
+            self._top = new_node
+            self._bottom = new_node
+        else:
+            new_node.next = self._top
+            self._top = new_node
+        self._size += 1
