@@ -100,3 +100,26 @@ def test_pop_front():
     assert ll.pop_front() == 30
     assert ll._head.value == 20
     assert ll._tail.value == 20
+
+def test_pop_back():
+    ll = LinkedList()
+    with pytest.raises(IndexError):
+        ll.pop_back()
+    ll.push_front(10)
+    assert ll._head.value == 10
+    assert ll._tail.value == 10
+    assert ll.pop_back() == 10
+    ll.push_front(20)
+    ll.push_front(30)
+    assert ll._head.value == 30
+    assert ll._tail.value == 20
+    assert ll.pop_back() == 20
+    assert ll._head.value == 30
+    assert ll._tail.value == 30
+    ll.push_front(50)
+    ll.push_front(60)
+    ll.push_front(70)
+    ll.push_front(80)
+    assert ll.pop_back() == 30
+    assert ll._head.value == 80
+    assert ll._tail.value == 50

@@ -49,7 +49,7 @@ class LinkedList:
             raise IndexError
         else:
             aux_pointer = self._head
-            for i in range(index-1):
+            for _ in range(index-1):
                 aux_pointer = aux_pointer.next
             new_node.next = aux_pointer.next
             aux_pointer.next = new_node
@@ -96,5 +96,23 @@ class LinkedList:
         else:
             pop_value = self._head.value
             self._head = self._head.next
+        self._size -= 1
+        return pop_value
+    
+    def pop_back(self):
+        """Removes and returns the last value from the list"""
+        if self.empty():
+            raise IndexError("Empty List")
+        if self._size == 1:
+            pop_value = self._head.value
+            self._head = None
+            self._tail = None
+        else:
+            pop_value = self._tail.value
+            aux_pointer = self._head
+            for _ in range(self._size - 2):
+                aux_pointer = aux_pointer.next
+            self._tail = aux_pointer
+            self._tail.next = None
         self._size -= 1
         return pop_value
