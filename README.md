@@ -24,7 +24,7 @@ Here, you will find data structures implementations, coding challenges and some 
 - Linked List (singly linked)
   - [x] c
   - [x] c++
-  - [ ] python 🚧
+  - [x] python
 
 - Linked List (doubly linked)
   - [ ] c
@@ -34,7 +34,7 @@ Here, you will find data structures implementations, coding challenges and some 
 - Stack
   - [x] c
   - [x] c++
-  - [ ] python 🚧
+  - [x] python
 
 - Queue  
   - [x] c
@@ -49,7 +49,7 @@ Here, you will find data structures implementations, coding challenges and some 
 - Hash Table
   - [ ] c
   - [ ] c++
-  - [ ] python
+  - [ ] python 🚧
   
 - Binary Search Tree 
   - [x] c
