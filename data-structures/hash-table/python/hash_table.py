@@ -34,6 +34,17 @@ class HashTable:
              'division': lambda: key % self._size
         }.get(self._hashing_function, lambda: None)()
     
+    def get(self, key, default=None):
+        """
+        Returns the value for given key if the key exists, 
+        else returns default value.
+        Default value is None if not specified.
+        """
+        index = self._hash(key)
+        slot = self._slots[index]
+        for pair in slot:
+            return pair[1] if pair[0] == key else default
+    
     def put(self, key, value):
         """
         Inserts a key and value pair inside the hash table.
