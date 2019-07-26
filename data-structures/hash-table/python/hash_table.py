@@ -53,3 +53,16 @@ class HashTable:
         index = self._hash(key)
         self._slots[index].append((key,value))
         self._len += 1
+    
+    def remove(self, key, default=None):
+        """
+        Removes and returns a given key value and its associated value pair.
+        If given key is not found, the given default value is returned.
+        If default value is not provided, None is returned.
+        """
+        index = self._hash(key)
+        slot = self._slots[index]
+        pop_index = None
+        for i in range(len(slot)):
+            if slot[i][0] == key: pop_index = i
+        return slot.pop(pop_index) if pop_index is not None else default
