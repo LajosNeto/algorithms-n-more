@@ -65,4 +65,8 @@ class HashTable:
         pop_index = None
         for i in range(len(slot)):
             if slot[i][0] == key: pop_index = i
-        return slot.pop(pop_index) if pop_index is not None else default
+        if pop_index is not None:
+            self._len -= 1
+            return slot.pop(pop_index)
+        else:
+            return default
