@@ -78,8 +78,14 @@ class HashTable:
         for i in range(len(slot)):
             if slot[i][0] == key: pop_index = i
         if pop_index is not None:
+            removed_pair = slot.pop(pop_index)
             self._len -= 1
-            return slot.pop(pop_index)
+            # If the amount of entries is 1/4 of the total amount of slots and
+            # the total amount of slots is greater then the minimun size, than
+            # a shirnking is applied ot the hash table
+            if self._len == self._size/4 and self._size > self.MIN_SIZE:
+                self._shrink()
+            return removed_pair
         else:
             return default
     
@@ -88,12 +94,31 @@ class HashTable:
         Expands the slots capacity from the hash table, applying a 
         rehash on all (key, value) pairs to match the new size of the
         hash table.
+        Applied when number of key entries is bigger than the amount of slots.
         """
         temp_slots = []
         for slot in self._slots:
             temp_slots += slot
 
         self._size *= 2
+        self._len = 0
+        self._slots = [[] for _ in range(self._size)]
+
+        for pair in temp_slots:
+            self.put(pair[0], pair[1])
+    
+    def _shrink(self):
+        """
+        Shrinks the slots capacity from the hash table, applying a 
+        rehash on all (key, value) pairs to match the new size of the
+        hash table.
+        Applied when number of key entries is 1/4 of the amount of slots.
+        """
+        temp_slots = []
+        for slot in self._slots:
+            temp_slots += slot
+        
+        self._size //= 2
         self._len = 0
         self._slots = [[] for _ in range(self._size)]
 

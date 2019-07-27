@@ -103,7 +103,7 @@ def test_remove():
     assert(ht.remove("Non existing name") == None)
     assert(ht.remove("Non existing name", -1) == -1)
 
-def test_expand():
+def test_expand_shrink():
     ht = HashTable()
     assert(ht._len == 0)
     assert(ht._size == 8)
@@ -146,3 +146,84 @@ def test_expand():
         [('Link the Hero', 981112345)],
         [('Jon Snow', 981275678)],
         [('Pepeta', 22222222)]])
+    ht.remove('Pepeta')
+    ht.remove('Clarinha, the little snow')
+    ht.remove("Kin the golden")
+    ht.remove("Tingle the green")
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [],
+        [],
+        [],
+        [('Princess Zelda', 987651123)],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [('Link the Hero', 981112345)],
+        [('Jon Snow', 981275678)],
+        []])
+    assert(ht._len == 5)
+    assert(ht._size == 16)
+    ht.remove('Pepeta')
+    ht.remove('Clarinha, the little snow')
+    ht.remove("Kin the golden")
+    ht.remove("Tingle the green")
+    ht.remove("Link the Hero")
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [],
+        [],
+        [('Jon Snow', 981275678)],
+        [('Princess Zelda', 987651123)]])
+    assert(ht._len == 4)
+    assert(ht._size == 8)
+    ht.remove("Carmen Sandiego")
+    assert(ht._slots == [
+        [],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [],
+        [],
+        [('Jon Snow', 981275678)],
+        [('Princess Zelda', 987651123)]])
+    ht.put("Some random 1", 00000000)
+    ht.put("Some random 2", 00000000)
+    ht.put("Some random 3", 00000000)
+    ht.put("Some random 4", 00000000)
+    ht.put("Some random 5", 00000000)
+    assert(ht._slots == [
+        [('Some random 3', 0)],
+        [('Some random 4', 0)],
+        [('Some random 5', 0)],
+        [('James Bond', 982268945)],
+        [],
+        [],
+        [('Jon Snow', 981275678), ('Some random 1', 0)],
+        [('Princess Zelda', 987651123), ('Some random 2', 0)]])
+    ht.put("Some random 6", 00000000)
+    assert(ht._slots == [
+        [],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [],
+        [],
+        [('Some random 1', 0)],
+        [('Princess Zelda', 987651123), ('Some random 2', 0)],
+        [('Some random 3', 0)],
+        [('Some random 4', 0)],
+        [('Some random 5', 0)],
+        [('Some random 6', 0)],
+        [],
+        [],
+        [('Jon Snow', 981275678)],
+        []])
