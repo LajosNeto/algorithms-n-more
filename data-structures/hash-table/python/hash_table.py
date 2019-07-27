@@ -45,6 +45,14 @@ class HashTable:
         for pair in slot:
             return pair[1] if pair[0] == key else default
     
+    def exist(self, key):
+        """
+        Check if key already exists inside the hash table.
+        """
+        index = self._hash(key)
+        slot = self._slots[index]
+        return key in dict(slot)
+    
     def put(self, key, value):
         """
         Inserts a key and value pair inside the hash table.
