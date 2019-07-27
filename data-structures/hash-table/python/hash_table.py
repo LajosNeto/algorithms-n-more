@@ -55,6 +55,8 @@ class HashTable:
             index = self._hash(key)
             self._slots[index].append((key,value))
             self._len += 1
+            if self._len > self._size:
+                self._expand()
 
     def remove(self, key, default=None):
         """
@@ -72,3 +74,20 @@ class HashTable:
             return slot.pop(pop_index)
         else:
             return default
+    
+    def _expand(self):
+        """
+        Expands the slots capacity from the hash table, applying a 
+        rehash on all (key, value) pairs to match the new size of the
+        hash table.
+        """
+        temp_slots = []
+        for slot in self._slots:
+            temp_slots += slot
+
+        self._size *= 2
+        self._len = 0
+        self._slots = [[] for _ in range(self._size)]
+        
+        for pair in temp_slots:
+            self.put(pair[0], pair[1])

@@ -85,3 +85,46 @@ def test_remove():
     assert(ht.remove("Non existing name") == None)
     assert(ht.remove("Non existing name", -1) == -1)
 
+def test_expand():
+    ht = HashTable()
+    assert(ht._len == 0)
+    assert(ht._size == 8)
+    ht.put("James Bond", 982268945)
+    ht.put("Jon Snow", 981275678)
+    ht.put("Princess Zelda", 987651123)
+    ht.put("Carmen Sandiego", 981112365)
+    ht.put("Link the Hero", 981112345)
+    ht.put("Tingle the green", 987652234)
+    ht.put("Kin the golden", 36424852)
+    ht.put('Clarinha, the little snow', 11111111)
+    assert(ht._len == 8)
+    assert(ht._size == 8)
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [('Kin the golden', 36424852), ('Clarinha, the little snow', 11111111)],
+        [('Link the Hero', 981112345), ('Tingle the green', 987652234)],
+        [('Jon Snow', 981275678)],
+        [('Princess Zelda', 987651123)]])
+    ht.put('Pepeta', 22222222)
+    assert(ht._len == 9)
+    assert(ht._size == 16)
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [('Clarinha, the little snow', 11111111)],
+        [('Tingle the green', 987652234)],
+        [],
+        [('Princess Zelda', 987651123)],
+        [],
+        [],
+        [],
+        [],
+        [('Kin the golden', 36424852)],
+        [('Link the Hero', 981112345)],
+        [('Jon Snow', 981275678)],
+        [('Pepeta', 22222222)]])
