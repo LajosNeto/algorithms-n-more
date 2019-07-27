@@ -36,6 +36,26 @@ def test_put():
         [('Link the Hero', 981112345), ('Tingle the green', 987652234)],
         [('Jon Snow', 981275678)],
         [('Princess Zelda', 987651123)]])
+    ht.put("Kin the golden", 11111111)
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [('Kin the golden', 36424852)],
+        [('Link the Hero', 981112345), ('Tingle the green', 987652234)],
+        [('Jon Snow', 981275678)],
+        [('Princess Zelda', 987651123)]])
+    ht.put('Clarinha, the little snow', 11111111)
+    assert(ht._slots == [
+        [('Carmen Sandiego', 981112365)],
+        [],
+        [],
+        [('James Bond', 982268945)],
+        [('Kin the golden', 36424852), ('Clarinha, the little snow', 11111111)],
+        [('Link the Hero', 981112345), ('Tingle the green', 987652234)],
+        [('Jon Snow', 981275678)],
+        [('Princess Zelda', 987651123)]])
 
 def test_get():
     ht = HashTable()

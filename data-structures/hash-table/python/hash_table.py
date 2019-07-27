@@ -49,11 +49,13 @@ class HashTable:
         """
         Inserts a key and value pair inside the hash table.
         The collisions are ignored as a chaining approach is taken.
+        Repeated keys can not be added.
         """
-        index = self._hash(key)
-        self._slots[index].append((key,value))
-        self._len += 1
-    
+        if not self.get(key):
+            index = self._hash(key)
+            self._slots[index].append((key,value))
+            self._len += 1
+
     def remove(self, key, default=None):
         """
         Removes and returns a given key value and its associated value pair.
