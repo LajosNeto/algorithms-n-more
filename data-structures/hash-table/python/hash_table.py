@@ -59,7 +59,7 @@ class HashTable:
         The collisions are ignored as a chaining approach is taken.
         Repeated keys can not be added.
         """
-        if not self.get(key):
+        if not self.exist(key):
             index = self._hash(key)
             self._slots[index].append((key,value))
             self._len += 1
@@ -96,6 +96,6 @@ class HashTable:
         self._size *= 2
         self._len = 0
         self._slots = [[] for _ in range(self._size)]
-        
+
         for pair in temp_slots:
             self.put(pair[0], pair[1])
