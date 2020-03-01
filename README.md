@@ -86,7 +86,7 @@ Here, you will find data structures implementations, coding challenges and some 
 - Insertion Sort
   - [ ] c
   - [ ] c++
-  - [ ] python
+  - [x] python
   
 - Selection Sort
   - [ ] c
