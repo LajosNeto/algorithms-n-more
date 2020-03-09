@@ -76,7 +76,7 @@ Here, you will find data structures implementations, coding challenges and some 
 - Mergesort
   - [ ] c
   - [ ] c++
-  - [ ] python
+  - [x] python
   
 - Quicksort
   - [ ] c
