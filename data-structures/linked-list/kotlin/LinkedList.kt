@@ -35,27 +35,13 @@ class LinkedList<T> {
         size += 1
     }
 
-    fun add(value: T, index: Int) {
-        if (isEmpty() || index == 0) addBegin(value)
-        else if (index in 0 until size()) {
-            val newNode = Node(value)
-            var walker = head
-            for (i in 0 until index - 1) walker = walker?.next
-            newNode.next = walker?.next
-            walker?.next = newNode
-            size += 1
-        }
-    }
-
     fun removeBegin() {
         if (!isEmpty()) {
-            if (size() == 1) {
+            if (size == 1) {
                 head = null
                 tail = null
-            } else {
-                head = head?.next
-                size -= 1
-            }
+            } else head = head?.next
+            size -= 1
         }
     }
 
@@ -71,7 +57,7 @@ class LinkedList<T> {
 
     fun removeEnd() {
         if (!isEmpty()) {
-            if (size() == 1) {
+            if (size == 1) {
                 head = null
                 tail = null
             } else {
@@ -81,6 +67,57 @@ class LinkedList<T> {
                 tail?.next = null
             }
             size -= 1
+        }
+    }
+
+    fun add(value: T, index: Int) {
+        if (isEmpty() || index == 0) addBegin(value)
+        else if (index in 0 until size) {
+            val newNode = Node(value)
+            var walker = head
+            for (i in 0 until index - 1) walker = walker?.next
+            newNode.next = walker?.next
+            walker?.next = newNode
+            size += 1
+        }
+    }
+
+    fun remove(index: Int) {
+        if (!isEmpty()) {
+            when (index) {
+                0 -> removeBegin()
+                size - 1 -> removeEnd()
+                in 0 until size - 1 -> {
+                    var walker = head
+                    for (i in 0 until index - 1) walker = walker?.next
+                    walker?.next = walker?.next?.next
+                }
+            }
+        }
+    }
+
+    fun get(index: Int): T? {
+        if (!isEmpty() && index >= 0 && index < size - 1) {
+            var walker = head
+            for (i in 0 until index) walker = walker?.next
+            return walker?.value
+        }
+        return null
+    }
+
+    fun reverse() {
+        if (size > 1) {
+            var current = head
+            var previous = head
+            var next = current?.next
+            while (next != null) {
+                current = next
+                next = current.next
+                current.next = previous
+                previous = current
+            }
+            head = tail.also { tail = head }
+            tail?.next = null
         }
     }
 
