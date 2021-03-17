@@ -90,4 +90,21 @@ class LinkedListTest {
         ll.addEnd(70)
         assert(ll.back() == 70)
     }
+
+    @Test
+    fun addAtIndexTest() {
+        val ll = LinkedList<Int>()
+        ll.add(10, 0)
+        assert(ll.toString() == "10 -> /null")
+        ll.add(0, 0)
+        assert(ll.toString() == "0 -> 10 -> /null")
+        ll.add(20, 1)
+        assert(ll.toString() == "0 -> 20 -> 10 -> /null")
+        ll.add(99, 1)
+        assert(ll.toString() == "0 -> 99 -> 20 -> 10 -> /null")
+        ll.add(77, 2)
+        assert(ll.toString() == "0 -> 99 -> 77 -> 20 -> 10 -> /null")
+        ll.add(66, 4)
+        assert(ll.toString() == "0 -> 99 -> 77 -> 20 -> 66 -> 10 -> /null")
+    }
 }

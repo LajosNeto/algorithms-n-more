@@ -7,7 +7,7 @@
 
 data class Node<T>(
     val value: T,
-    var next: Node<T>?
+    var next: Node<T>? = null
 )
 
 class LinkedList<T> {
@@ -26,21 +26,43 @@ class LinkedList<T> {
     }
 
     fun addBegin(value: T) {
-        val newNode = Node(value, null)
-        if (isEmpty()) initialLoad(newNode)
+        if (isEmpty()) initialLoad(value)
         else {
+            val newNode = Node(value, null)
             newNode.next = head
             head = newNode
         }
         size += 1
     }
 
-    fun removeBegin() { if (!isEmpty()) head = head?.next }
+    fun add(value: T, index: Int) {
+        if (isEmpty() || index == 0) addBegin(value)
+        else if (index in 0 until size()) {
+            val newNode = Node(value)
+            var walker = head
+            for (i in 0 until index - 1) walker = walker?.next
+            newNode.next = walker?.next
+            walker?.next = newNode
+            size += 1
+        }
+    }
+
+    fun removeBegin() {
+        if (!isEmpty()) {
+            if (size() == 1) {
+                head = null
+                tail = null
+            } else {
+                head = head?.next
+                size -= 1
+            }
+        }
+    }
 
     fun addEnd(value: T) {
-        val newNode = Node(value, null)
-        if (isEmpty()) initialLoad(newNode)
+        if (isEmpty()) initialLoad(value)
         else {
+            val newNode = Node(value, null)
             tail?.next = newNode
             tail = newNode
         }
@@ -58,6 +80,7 @@ class LinkedList<T> {
                 tail = walker
                 tail?.next = null
             }
+            size -= 1
         }
     }
 
@@ -67,8 +90,10 @@ class LinkedList<T> {
     fun size() = size
     private fun isEmpty() = size == 0
 
-    private fun initialLoad(newNode: Node<T>) {
+    private fun initialLoad(value: T) {
+        val newNode = Node(value)
         head = newNode
         tail = newNode
+        size += 1
     }
 }
