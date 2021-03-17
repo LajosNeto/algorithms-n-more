@@ -170,3 +170,70 @@ class LinkedListTest {
         ll.reverse()
         assert(ll.toString() == "10 -> 30 -> 20 -> 40 -> 50 -> /null")
     }
+
+    @Test
+    fun getReversedTest() {
+        val ll = LinkedList<Int>()
+        ll.addBegin(50)
+        ll.addBegin(40)
+        ll.addBegin(30)
+        ll.addBegin(20)
+        ll.addBegin(10)
+        ll.addBegin(0)
+        assert(ll.toString() == "0 -> 10 -> 20 -> 30 -> 40 -> 50 -> /null")
+        assert(ll.getReversed(1) == 50)
+        assert(ll.getReversed(2) == 40)
+        assert(ll.getReversed(3) == 30)
+        assert(ll.getReversed(4) == 20)
+        assert(ll.getReversed(5) == 10)
+        assert(ll.getReversed(6) == 0)
+    }
+
+    @Test
+    fun sizeTest() {
+        val ll = LinkedList<Int>()
+        ll.addBegin(0)
+        assert(ll.size() == 1)
+        ll.addBegin(10)
+        assert(ll.size() == 2)
+        ll.add(20, 1)
+        assert(ll.size() == 3)
+        ll.addEnd(50)
+        assert(ll.size() == 4)
+        ll.removeEnd()
+        assert(ll.size() == 3)
+        ll.removeBegin()
+        assert(ll.size() == 2)
+        ll.remove(0)
+        assert(ll.size() == 1)
+    }
+
+    @Test
+    fun removeAllTest() {
+        val ll1 = LinkedList<Int>()
+        ll1.addBegin(50)
+        ll1.removeAll(50)
+        assert(ll1.toString() == "/null")
+
+        val ll2 = LinkedList<Int>()
+        ll2.addBegin(50)
+        ll2.addBegin(10)
+        ll2.removeAll(50)
+        assert(ll2.toString() == "10 -> /null")
+
+        val ll3 = LinkedList<Int>()
+        ll3.addBegin(10)
+        ll3.addBegin(50)
+        ll3.removeAll(50)
+        assert(ll2.toString() == "10 -> /null")
+
+        val ll4 = LinkedList<Int>()
+        ll4.addBegin(20)
+        ll4.addBegin(30)
+        ll4.addBegin(50)
+        ll4.addBegin(40)
+        ll4.addBegin(50)
+        ll4.removeAll(50)
+        assert(ll4.toString() == "40 -> 30 -> 20 -> /null")
+    }
+}
