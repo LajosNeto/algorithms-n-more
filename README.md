@@ -5,7 +5,11 @@ Repository for algorithms / general CS subjects / SW engineering studies.
 
 Here, you will find data structures implementations, coding challenges, specific algorithms overview, sw engineeting topics such as design patterns and some interesting problems found on books/articles/etc.
 
+<br>
+
 ## Summary
+
+<br>
 
 ### Data Structures & General algorithms
 
@@ -32,6 +36,10 @@ Here, you will find data structures implementations, coding challenges, specific
 | Bellman-Ford |⚪|⚪|⚪|⚪|
 | Karp-Rabin |⚪|⚪|⚪|⚪|
 | Karatsuba multiplication |⚪|⚪|⚪|⚪|
+| Rolling hash ADT |⚪|⚪|⚪|⚪|
+
+<br>
+<br>
 
 ### General CS topics
 
@@ -45,6 +53,9 @@ Here, you will find data structures implementations, coding challenges, specific
 | Dynamic Programming |⚪|⚪|
 | Process/Thread |⚪|⚪|
 | Search |⚪|⚪|
+
+<br>
+<br>
 
 ### SW engineering topics
 
