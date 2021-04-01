@@ -99,4 +99,19 @@ class HashTableTest {
         assert(hashTable.tableSize() == 32)
     }
 
+    @Test
+    fun getKeyTest() {
+        val hashTable = ChainHashTable<Int, String>()
+        hashTable.put(1, "number one")
+        hashTable.put(2, "number two")
+        hashTable.put(3, "number three")
+        hashTable.put(4, "number four")
+        hashTable.put(5, "number five")
+        assert(hashTable.get(1) == "number one")
+        assert(hashTable.get(2) == "number two")
+        assert(hashTable.get(3) == "number three")
+        assert(hashTable.get(4) == "number four")
+        assert(hashTable.get(5) == "number five")
+        assert(hashTable.get(6) == null)
+    }
 }

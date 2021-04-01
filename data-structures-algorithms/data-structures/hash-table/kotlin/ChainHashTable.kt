@@ -72,11 +72,16 @@ class ChainHashTable<K, V>(val hashFunction: String = "universal") {
         return false
     }
 
+    fun get(key: K): V? {
+        table[hash(key)].forEach { node ->
+            if(node.first == key) return node.second
+        }
+        return null
+    }
+
     fun keyCount() = keyCount
 
     fun tableSize() = tableSize
-
-//    fun get(key: K): V { return }
 
     fun testPrint() {
         var collidedIndexes = 0
