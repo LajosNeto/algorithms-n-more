@@ -37,6 +37,8 @@ Here, you will find data structures implementations, coding challenges, specific
 | Karp-Rabin |⚪|⚪|⚪|⚪|
 | Karatsuba multiplication |⚪|⚪|⚪|⚪|
 | Rolling hash ADT |⚪|⚪|⚪|⚪|
+| Breadth-First Search (BFS) |⚪|⚪|⚪|⚪|
+| Depth-First Search (DFS) |⚪|⚪|⚪|⚪|
 
 <br>
 <br>
