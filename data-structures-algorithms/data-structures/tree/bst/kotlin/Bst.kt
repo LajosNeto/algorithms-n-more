@@ -14,77 +14,59 @@ data class Node(
 )
 
 class Bst {
-    private lateinit var root: Node
+    private var root: Node? = null
     private var size = 0
 
     fun put(value: Number) {
-        when (size) {
-            0 -> {
-                root = Node(value = value, subtreeSize = 1)
-                size += 1
-            }
-            else -> { _put(value, root) }
-        }
+        root = _put(value, root)
     }
 
-    private fun _put(value: Number, currentNode: Node) {
-        if (value.isSmaller(currentNode.value)) {
-            when {
-                currentNode.left != null -> {
-                    currentNode.left?.let { _put(value, it) }
-                }
-                else -> {
-                    currentNode.left = Node(value)
-                    size += 1
-                }
-            }
-        } else if (value.isBigger(currentNode.value)) {
-            when {
-                currentNode.right != null -> {
-                    currentNode.right?.let { _put(value, it) }
-                }
-                else -> {
-                    currentNode.right = Node(value)
-                    size += 1
-                }
-            }
-        }
+    private fun _put(value: Number, currentNode: Node?): Node {
+        currentNode ?: return Node(value)
+        if (value.isSmaller(currentNode.value) == true)
+            currentNode.left = _put(value, currentNode.left)
+        if (value.isBigger(currentNode.value) == true)
+            currentNode.right = _put(value, currentNode.right)
+        return currentNode
     }
 
-    fun getInOrder() { if (size > 0) { dfsInOrder(root) } }
+    fun getInOrder() = mutableListOf<Number>().apply { dfsInOrder(root, this) }
 
-    private fun dfsInOrder(currentNode: Node?) {
+    private fun dfsInOrder(currentNode: Node?, nodes: MutableList<Number>) {
         currentNode?.let {
-            dfsInOrder(currentNode.left)
-            println(currentNode.value)
-            dfsInOrder(currentNode.right)
+            dfsInOrder(currentNode.left, nodes)
+            nodes.add(currentNode.value)
+            dfsInOrder(currentNode.right, nodes)
         }
     }
 
-    fun getPreOrder() { if (size > 0) { dfsPreOrder(root) } }
+    fun getPreOrder() = mutableListOf<Number>().apply { dfsPreOrder(root, this) }
 
-    private fun dfsPreOrder(currentNode: Node?) {
+    private fun dfsPreOrder(currentNode: Node?, nodes: MutableList<Number>) {
         currentNode?.let {
-            println(currentNode.value)
-            dfsPreOrder(currentNode.left)
-            dfsPreOrder(currentNode.right)
+            nodes.add(currentNode.value)
+            dfsPreOrder(currentNode.left, nodes)
+            dfsPreOrder(currentNode.right, nodes)
         }
     }
 
-    fun getPostOrder() { if (size > 0) { dfsPostOrder(root) } }
+    fun getPostOrder() = mutableListOf<Number>().apply { dfsPostOrder(root, this) }
 
-    private fun dfsPostOrder(currentNode: Node?) {
+    private fun dfsPostOrder(currentNode: Node?, nodes: MutableList<Number>) {
         currentNode?.let {
-            dfsPostOrder(currentNode.left)
-            dfsPostOrder(currentNode.right)
-            println(currentNode.value)
+            dfsPostOrder(currentNode.left, nodes)
+            dfsPostOrder(currentNode.right, nodes)
+            nodes.add(currentNode.value)
         }
     }
+
+    fun getIncreaseOrder() = getInOrder()
 
     fun size() = size
 
     companion object {
-        fun Number.isSmaller(value: Number) = this.toLong() < value.toLong()
-        fun Number.isBigger(value: Number) = this.toLong() > value.toLong()
+        fun Number.isSmaller(value: Number?) = value?.toLong()?.let { this.toLong() < it }
+        fun Number.isBigger(value: Number?) = value?.toLong()?.let { this.toLong() > it }
     }
+
 }
