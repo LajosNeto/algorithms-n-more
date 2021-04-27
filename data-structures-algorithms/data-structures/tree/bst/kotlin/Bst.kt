@@ -62,6 +62,21 @@ class Bst {
 
     fun getIncreaseOrder() = getInOrder()
 
+    fun getBfsOrder() = mutableListOf<Number>().apply { bfsOrder(root, this) }
+
+    private fun bfsOrder(root: Node?, nodes: MutableList<Number>) {
+        root?.let {
+            val nodeQueue = mutableListOf(root)
+            while (nodeQueue.isNotEmpty()) {
+                nodeQueue.last().left?.let { leftNode -> nodeQueue.add(0, leftNode) }
+                nodeQueue.last().right?.let { rightNode -> nodeQueue.add(0, rightNode) }
+                nodes.add(nodeQueue.last().value)
+                nodeQueue.removeLast()
+            }
+        }
+
+    }
+
     fun size() = size
 
     companion object {

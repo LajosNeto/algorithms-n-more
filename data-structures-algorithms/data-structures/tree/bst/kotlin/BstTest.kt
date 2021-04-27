@@ -44,4 +44,20 @@ class BstTest {
         bst.put(83)
         assert(bst.getPostOrder() == mutableListOf(43, 46, 64, 83, 79, 49))
     }
+
+    @Test
+    fun postBfsPathTest() {
+        val bst = Bst()
+        bst.put(49)
+        bst.put(46)
+        bst.put(79)
+        bst.put(43)
+        bst.put(64)
+        bst.put(83)
+        assert(bst.getBfsOrder() == mutableListOf(49, 46, 79, 43, 64, 83))
+        bst.put(41)
+        bst.put(77)
+        bst.put(95)
+        assert(bst.getBfsOrder() == mutableListOf(49, 46, 79, 43, 64, 83, 41, 77, 95))
+    }
 }
