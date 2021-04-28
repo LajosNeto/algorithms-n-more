@@ -90,6 +90,22 @@ class Bst {
         else node?.value
     }
 
+    fun has(value: Number) = has(value, root)
+
+    private fun has(value: Number, node: Node?): Boolean {
+        return when {
+            value.isSmaller(node?.value) == true -> {
+                if (node?.left != null) has(value, node.left)
+                else false
+            }
+            value.isBigger(node?.value) == true -> {
+                if (node?.right != null) has(value, node.right)
+                else false
+            }
+            else -> { true }
+        }
+    }
+
     fun size() = size
 
     companion object {

@@ -93,4 +93,27 @@ class BstTest {
         bst.put(100)
         assert(bst.max() == 100)
     }
+
+    @Test
+    fun hasTest() {
+        val bst = Bst()
+        bst.put(49)
+        assert(bst.has(49))
+        bst.put(46)
+        assert(bst.has(46))
+        bst.put(79)
+        bst.put(43)
+        bst.put(64)
+        bst.put(83)
+        bst.put(41)
+        bst.put(77)
+        bst.put(95)
+        assert(bst.has(79))
+        assert(bst.has(43))
+        assert(bst.has(64))
+        assert(bst.has(83))
+        assert(bst.has(41))
+        assert(bst.has(77))
+        assert(bst.has(95))
+    }
 }
