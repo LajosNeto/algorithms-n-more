@@ -60,8 +60,6 @@ class Bst {
         }
     }
 
-    fun getIncreaseOrder() = getInOrder()
-
     fun getBfsOrder() = mutableListOf<Number>().apply { bfsOrder(root, this) }
 
     private fun bfsOrder(root: Node?, nodes: MutableList<Number>) {
@@ -74,7 +72,22 @@ class Bst {
                 nodeQueue.removeLast()
             }
         }
+    }
 
+    fun getIncreaseOrder() = getInOrder()
+
+    fun min() = min(root)
+
+    private fun min(node: Node?): Number? {
+        return if (node?.left != null) min(node.left)
+        else node?.value
+    }
+
+    fun max() = max(root)
+
+    private fun max(node: Node?): Number? {
+        return if (node?.right != null) max(node.right)
+        else node?.value
     }
 
     fun size() = size
@@ -83,5 +96,4 @@ class Bst {
         fun Number.isSmaller(value: Number?) = value?.toLong()?.let { this.toLong() < it }
         fun Number.isBigger(value: Number?) = value?.toLong()?.let { this.toLong() > it }
     }
-
 }

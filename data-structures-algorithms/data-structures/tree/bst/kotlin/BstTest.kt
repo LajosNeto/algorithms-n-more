@@ -60,4 +60,37 @@ class BstTest {
         bst.put(95)
         assert(bst.getBfsOrder() == mutableListOf(49, 46, 79, 43, 64, 83, 41, 77, 95))
     }
+
+    @Test
+    fun minTest() {
+        val bst = Bst()
+        bst.put(50)
+        assert(bst.min() == 50)
+        bst.put(40)
+        assert(bst.min() == 40)
+        bst.put(70)
+        bst.put(45)
+        bst.put(20)
+        assert(bst.min() == 20)
+        bst.put(23)
+        bst.put(10)
+        assert(bst.min() == 10)
+    }
+
+    @Test
+    fun maxTest() {
+        val bst = Bst()
+        bst.put(50)
+        assert(bst.max() == 50)
+        bst.put(40)
+        bst.put(70)
+        assert(bst.max() == 70)
+        bst.put(45)
+        bst.put(90)
+        assert(bst.max() == 90)
+        bst.put(85)
+        assert(bst.max() == 90)
+        bst.put(100)
+        assert(bst.max() == 100)
+    }
 }
