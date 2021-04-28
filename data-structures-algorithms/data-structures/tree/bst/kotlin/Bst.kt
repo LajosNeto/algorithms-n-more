@@ -18,15 +18,15 @@ class Bst {
     private var size = 0
 
     fun put(value: Number) {
-        root = _put(value, root)
+        root = _put(value, null, root)
     }
 
-    private fun _put(value: Number, currentNode: Node?): Node {
-        currentNode ?: return Node(value)
+    private fun _put(value: Number, parentNode: Node?, currentNode: Node?): Node {
+        currentNode ?: return Node(value, parent = parentNode)
         if (value.isSmaller(currentNode.value) == true)
-            currentNode.left = _put(value, currentNode.left)
+            currentNode.left = _put(value, currentNode, currentNode.left)
         if (value.isBigger(currentNode.value) == true)
-            currentNode.right = _put(value, currentNode.right)
+            currentNode.right = _put(value, currentNode, currentNode.right)
         return currentNode
     }
 
@@ -90,19 +90,21 @@ class Bst {
         else node?.value
     }
 
-    fun has(value: Number) = has(value, root)
+    fun has(value: Number) = getNode(value, root) != null
 
-    private fun has(value: Number, node: Node?): Boolean {
+    fun parent(value: Number) = getNode(value, root)?.parent?.copy()
+
+    private fun getNode(value: Number, node: Node?): Node? {
         return when {
             value.isSmaller(node?.value) == true -> {
-                if (node?.left != null) has(value, node.left)
-                else false
+                if (node?.left != null) getNode(value, node.left)
+                else null
             }
             value.isBigger(node?.value) == true -> {
-                if (node?.right != null) has(value, node.right)
-                else false
+                if (node?.right != null) getNode(value, node.right)
+                else null
             }
-            else -> { true }
+            else -> { node }
         }
     }
 

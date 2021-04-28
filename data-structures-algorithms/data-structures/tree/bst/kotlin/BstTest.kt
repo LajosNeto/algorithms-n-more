@@ -116,4 +116,27 @@ class BstTest {
         assert(bst.has(77))
         assert(bst.has(95))
     }
+
+    @Test
+    fun parentTest() {
+        val bst = Bst()
+        bst.put(49)
+        assert(bst.parent(46) == null)
+        bst.put(46)
+        assert(bst.parent(46)?.value == 49)
+        bst.put(79)
+        assert(bst.parent(79)?.value == 49)
+        bst.put(43)
+        assert(bst.parent(43)?.value == 46)
+        bst.put(64)
+        assert(bst.parent(64)?.value == 79)
+        bst.put(83)
+        assert(bst.parent(83)?.value == 79)
+        bst.put(41)
+        assert(bst.parent(41)?.value == 43)
+        bst.put(77)
+        assert(bst.parent(77)?.value == 64)
+        bst.put(95)
+        assert(bst.parent(95)?.value == 83)
+    }
 }
